@@ -3,7 +3,7 @@
 
 	export let animationId: string | null = null;
 	export let lines: string | true | null = null;
-	export let language: string | null = null;
+	export let language: string | null = "coffeescript";
 	export let external: string | null = null;
 </script>
 

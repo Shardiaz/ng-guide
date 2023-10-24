@@ -9,13 +9,14 @@
 	import { onMount } from 'svelte';
 	import Intro from './slides/intro/Intro.svelte';
 	import Setup from './slides/setup/Setup.svelte';
+	import Components from './slides/components/Components.svelte';
 
 	onMount(() => {
 		const reveal = new Reveal({
 			autoAnimateUnmatched: false
 		});
 		reveal.initialize({
-			plugins: [Externalcode, RevealHighlight, RevealNotes, ]
+			plugins: [Externalcode, RevealHighlight, RevealNotes]
 		});
 	});
 </script>
@@ -24,6 +25,6 @@
 	<div class="slides">
 		<Intro />
 		<Setup />
+		<Components />
 	</div>
 </div>
-
