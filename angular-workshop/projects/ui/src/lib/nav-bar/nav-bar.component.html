@@ -1,0 +1,7 @@
+<ui-nav-bar-item
+  *ngFor="let route of routes$ | async; index as i; count as c"
+  [shade]="(i + 1) / c"
+  (click)="routeSelected.emit(route.name)"
+>
+  {{ route.name }}
+</ui-nav-bar-item>

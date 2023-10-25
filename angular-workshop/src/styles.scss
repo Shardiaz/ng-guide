@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+.badge {
+  padding: 0.25rem;
+  background: rgb(47, 45, 71);
+  color: #c5c5c5;
+  border-radius: 0.5rem;
+
+  &[positive],&.positive{
+    background: #094210;
+  }
+  &[negative],&.negative{
+    background: #420909;
+  }
+}

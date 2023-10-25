@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  ui-card:first-of-type {
+    --background: rgb(97, 121, 201);
+    --header-color: rgb(47, 45, 71);
+  }
+}
+
+.modified {
+  padding: 0.25rem;
+  background: rgb(47, 45, 71);
+  color: #c5c5c5;
+  border-radius: 0.5rem;
+}

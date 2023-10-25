@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'slides-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ShellComponent],
   templateUrl: './app.component.html',

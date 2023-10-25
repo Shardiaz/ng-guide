@@ -9,7 +9,7 @@
 	import InputOutput from './InputOutput.svelte';
 </script>
 
-<Slide topic="Components">
+<Slide topic="components">
 	<Slide>
 		<Hero><h2>Components</h2></Hero>
 		<Description>We can use the cli to generate components.</Description>

@@ -2,5 +2,6 @@
  * Public API Surface of ui
  */
 
-export * from './lib/ui.service';
-export * from './lib/ui.component';
+export * from './lib/card/card.component';
+export * from './lib/nav-bar/nav-bar.component';
+export * from './lib/nav-bar/nav-bar-item/nav-bar-item.component';

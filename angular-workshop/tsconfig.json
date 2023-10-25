@@ -20,14 +20,10 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "ui": [
-        "dist/ui"
-      ]
+      "@slides/ui": ["projects/ui/src/public-api.ts"],
+      "@slides/api": ["projects/api/src/public-api.ts"]
     },
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
