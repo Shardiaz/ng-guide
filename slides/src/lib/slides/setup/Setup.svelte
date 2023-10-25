@@ -7,7 +7,7 @@
 	import CreateProject from './CreateProject.svelte';
 </script>
 
-<Slide>
+<Slide topic="setup">
 	<Slide>
 		<Hero><h2>Setup your workspace</h2></Hero>
 		<Description>We require Node.js as JavaScript runtime</Description>

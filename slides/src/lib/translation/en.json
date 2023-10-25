@@ -1,0 +1,8 @@
+{
+	"setup": "Getting started",
+	"speaker.host": "Im your host",
+	"overview": {
+		"title": "Overview",
+		"description": "In this guide we will create a workspace with an ui library to explore the core concepts of Angular"
+	}
+}

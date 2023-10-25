@@ -38,14 +38,14 @@
 <Slide>
 	<Hero><h2>Typescript</h2></Hero>
 	<Description>We use ESLint to enforce extended and more complex rule sets</Description>
-	<Code language="coffescript" animationId="lint">
+	<Code language="coffeescript" animationId="lint">
 		npx ng add @angular-eslint/schematics
 	</Code>
 </Slide>
 <Slide>
 	<Hero><h2>Typescript</h2></Hero>
 	<Description>We use ESLint to enforce extended and more complex rule sets</Description>
-	<Code language="coffescript" animationId="lint">
+	<Code language="coffeescript" animationId="lint">
 		npx ng add @angular-eslint/schematics
 		npx ng lint
 	</Code>

@@ -2,7 +2,7 @@
 	import Reveal from 'reveal.js';
 	import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
 	import RevealNotes from 'reveal.js/plugin/notes/notes';
-	import Externalcode from '$lib/plugins/externalcode/externalcode';
+	import EmbedCode from '$lib/plugins/embed-code/embed-code';
 	import 'reveal.js/dist/reveal.css';
 	import 'reveal.js/dist/theme/blood.css';
 
@@ -16,7 +16,7 @@
 			autoAnimateUnmatched: false
 		});
 		reveal.initialize({
-			plugins: [Externalcode, RevealHighlight, RevealNotes]
+			plugins: [EmbedCode, RevealHighlight, RevealNotes]
 		});
 	});
 </script>

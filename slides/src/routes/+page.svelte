@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>ShipBit Guide to Angular</title>
+	<title>ShipBit guide to Angular</title>
 </svelte:head>
 
 <SlideDeck/>
