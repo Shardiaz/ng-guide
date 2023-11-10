@@ -1,0 +1,29 @@
+.badge,
+[badge] {
+  padding: 0.25rem 0.5rem;
+  background: var(--mark-color);
+  color: var(--text-soft-color);
+  border-radius: 0.5rem;
+
+  &[primary],
+  &.primary {
+    background: var(--special-bg-color);
+  }
+  &[dark],
+  &.dark {
+    background: var(--dark-color);
+    color: var(--light-color);
+  }
+  &[light],
+  &.light {
+    background: var(--light-color);
+    color: var(--dark-color);
+  }
+}
+
+.badges,
+[badges] {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}

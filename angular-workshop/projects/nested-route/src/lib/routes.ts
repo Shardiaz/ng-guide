@@ -10,9 +10,9 @@ export const Routes = [
   },
   {
     path: 'model/:id',
-    title: (a) =>
+    title: (activatedRoute) =>
       inject(CollectionService)
-        .GetSingle(a.paramMap.get('id') || '')
+        .GetSingle(activatedRoute.paramMap.get('id') || '')
         .then((item) => item?.name || 'New Model'),
     loadComponent: () => import('./edit-model/edit-model.component'),
   },

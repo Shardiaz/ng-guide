@@ -1,5 +1,6 @@
 :host {
   display: block;
+  padding: var(--content-padding);
 }
 
 .projects {
@@ -7,11 +8,6 @@
   flex-direction: row;
   gap: 1rem;
   flex-wrap: wrap;
-
-  ui-card:first-of-type {
-    --background: rgb(97, 121, 201);
-    --header-color: rgb(47, 45, 71);
-  }
 }
 
 .modified {

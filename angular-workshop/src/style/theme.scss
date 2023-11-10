@@ -6,6 +6,7 @@
 @import "elements/input";
 @import "elements/form";
 @import "elements/button";
+@import "elements/badge";
 
 body {
   color: var(--text-color);
@@ -18,8 +19,8 @@ body {
   --card-color: var(--light-color);
   --card-header-color: var(--light-color);
   --card-shadow: 0.25rem 0.25rem 5px rgba(var(--shadow-color-rgb), 0.3);
-  --card-border-radius: 2rem;
-  --card-padding: 2rem;
+  --card-border-radius: var(--border-radius);
+  --card-padding: var(--content-padding);
   --nav-bar-color: var(--dark-color);
   --nav-bar-background: var(--light-color);
   --nav-bar-border-radiu: 0.8rem;
@@ -28,4 +29,5 @@ body {
   --border-width: 1px;
   --border-radius: 1rem;
   --input-padding: 0.5rem 1rem;
+  --content-padding: 2rem;
 }
