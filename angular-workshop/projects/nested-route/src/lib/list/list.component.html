@@ -1,0 +1,9 @@
+<button routerLink="../model/-">add</button>
+<ul>
+  <li
+    *ngFor="let collection of collections$ | async"
+    routerLink="../model/{{ collection.id }}"
+  >
+    {{ collection.name }}
+  </li>
+</ul>

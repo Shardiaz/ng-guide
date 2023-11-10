@@ -1,4 +1,14 @@
 :host {
   display: inline-flex;
-  flex-direction: row-reverse;
+}
+
+ui-nav-bar-item:first-of-type {
+  margin-left: 0;
+  padding-left: var(--padding);
+  z-index: 99;
+}
+
+ui-nav-bar-item:last-of-type {
+  font-weight: bold;
+  text-transform: uppercase;
 }

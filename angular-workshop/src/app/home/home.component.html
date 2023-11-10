@@ -1,9 +1,7 @@
-<h1>Recent projects</h1>
+<h1>Examples</h1>
 <div class="projects">
-  <ui-card *ngFor="let project of projects$ | async" routerLink="/project/{{project.id}}">
-    <h3 cardHeader>{{ project.name }}</h3>
-    {{ project.description }}
-    <span cardTag class="badge positive">{{project.lastModified | date}}</span>
-    <span cardTag class="badge" negative>{{project.userModified}}</span>
+  <ui-card routerLink="/nested-route">
+    <h3 cardHeader>Nested Route</h3>
+    Example of child routes and child router
   </ui-card>
 </div>

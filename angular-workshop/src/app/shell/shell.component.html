@@ -1,2 +1,5 @@
-<ui-nav-bar (routeSelected)="routeSelected($event)"></ui-nav-bar>
+<header>
+  <ui-nav-bar rootName="ng guide"> </ui-nav-bar>
+  <ui-theme-switch [themes]="themes"></ui-theme-switch>
+</header>
 <router-outlet></router-outlet>

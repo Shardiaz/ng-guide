@@ -21,7 +21,8 @@
     "useDefineForClassFields": false,
     "paths": {
       "@slides/ui": ["projects/ui/src/public-api.ts"],
-      "@slides/api": ["projects/api/src/public-api.ts"]
+      "@slides/api": ["projects/api/src/public-api.ts"],
+      "@slides/nested-route": ["projects/nested-route/src/public-api.ts"]
     },
     "lib": ["ES2022", "dom"]
   },

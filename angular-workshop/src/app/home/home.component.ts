@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '@slides/ui';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ProjectService } from '@slides/api';
-import { from } from 'rxjs';
+import { CardComponent } from '@slides/ui';
 
 @Component({
   selector: 'slides-home',
@@ -12,7 +10,4 @@ import { from } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
-  public projects$ = from(this.projectService.GetMany(3));
-  constructor(private projectService: ProjectService) {}
-}
+export class HomeComponent {}

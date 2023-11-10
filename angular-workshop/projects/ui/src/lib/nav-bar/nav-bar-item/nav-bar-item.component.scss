@@ -4,8 +4,10 @@
   --padding: 1rem;
   --overlap: 2rem;
   --shade: 0;
-  --background: var(--nav-bar-item-background, rgb(0, 174, 255));
-  --border-radius: var(--nav-bar-item-border-radius, 0.8rem);
+  --color: var(--nav-bar-color, black);
+  --background: var(--nav-bar-background, rgb(0, 174, 255));
+  --border-radius: var(--nav-bar-border-radius, 0.8rem);
+  color: var(--color);
   background: var(--background);
   border-radius: var(--border-radius);
   padding: var(--padding);
@@ -14,16 +16,13 @@
   min-width: 10rem;
   clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 0 50%, 0% 0%);
   transition: transform 350ms ease-out;
-  cursor: pointer;
 
-  &:last-of-type {
-    margin-left: 0;
-    padding-left: var(--padding);
-    font-weight: bold;
-    text-transform: uppercase;
+  &[disabled] {
+    pointer-events: none;
   }
 
   &:hover {
+    cursor: pointer;
     transform: translateY(-0.25rem);
     transition: transform 150ms ease-out;
   }

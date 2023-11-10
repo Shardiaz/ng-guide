@@ -1,0 +1,15 @@
+input,
+textarea {
+  background-color: var(--input-color);
+  outline-color: var(--outline-color);
+  color: var(--text-color);
+  padding: var(--input-padding);
+  border: none;
+  border-bottom: calc(var(--border-width) * 2) solid var(--border-color);
+
+  &:focus,
+  &:focus-within {
+    outline-width: var(--outline-width);
+    outline-style: solid;
+  }
+}

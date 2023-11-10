@@ -1,26 +1,23 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   ContentChildren,
   EventEmitter,
+  Input,
   OnDestroy,
   Output,
   QueryList,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NavBarItemComponent } from './nav-bar-item/nav-bar-item.component';
 import {
+  ActivatedRouteSnapshot,
   ActivationEnd,
+  Event,
   EventType,
   Router,
-  Event,
   RouterModule,
-  Data,
 } from '@angular/router';
 import { Observable, Subject, filter, map, takeUntil } from 'rxjs';
-
-interface RouteData {
-  name: string;
-}
+import { NavBarItemComponent } from './nav-bar-item/nav-bar-item.component';
 
 @Component({
   selector: 'ui-nav-bar',
@@ -30,22 +27,38 @@ interface RouteData {
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnDestroy {
-  public routes$: Observable<RouteData[]>;
+  @Input() rootName?: string;
+  public routes$: Observable<ActivatedRouteSnapshot[]>;
   @ContentChildren(NavBarItemComponent) Items?: QueryList<NavBarItemComponent>;
   @Output() routeSelected = new EventEmitter<string>();
 
   private destroy$ = new Subject<void>();
 
-  constructor(router: Router) {
+  constructor(private router: Router) {
     this.routes$ = router.events.pipe(
       takeUntil(this.destroy$),
-      filter<Event, ActivationEnd>(this.isActivationEnd),
-      map(this.mapEventToRoutes)
+      filter(this.isActivationEnd),
+      // activation is recursive, hence snapshot withould children emits first
+      filter((event) => !event.snapshot.children.length),
+      map((event) =>
+        // the root is empty url
+        event.snapshot.pathFromRoot.filter(
+          (item, index) => !index || item.url.length
+        )
+      )
     );
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
+  }
+
+  public navigate(route: ActivatedRouteSnapshot) {
+    if (route.url.length) {
+      this.router.navigate(route.url);
+    } else {
+      this.router.navigateByUrl('/');
+    }
   }
 
   private isActivationEnd(event: Event): event is ActivationEnd {
@@ -55,15 +68,5 @@ export class NavBarComponent implements OnDestroy {
       default:
         return false;
     }
-  }
-
-  private mapEventToRoutes(event: ActivationEnd) {
-    const isRouteData = (data: Data | undefined): data is RouteData => {
-      return !!data?.['name'];
-    };
-
-    return event.snapshot.pathFromRoot
-      .map((route) => route.routeConfig?.data)
-      .filter(isRouteData);
   }
 }
