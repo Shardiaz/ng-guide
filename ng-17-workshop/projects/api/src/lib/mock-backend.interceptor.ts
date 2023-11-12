@@ -17,7 +17,7 @@ export function mockBackendInterceptor(
     return next(request);
   }
 
-  const randomDelay$ = timer(Math.random() * 700 + 100);
+  const randomDelay$ = timer(Math.random() * 300 + 20);
 
   return randomDelay$.pipe(
     switchMap(() => handleApiRequest(url, method, headers, body))
@@ -82,7 +82,7 @@ function pushStorage(collection: string, body: Entity, id?: string) {
   if (id) {
     // update
     const existingId = items.findIndex((item) => item.id === id);
-    if (!existingId) {
+    if (existingId < 0) {
       return notFound('unable to update, id not found.');
     }
     items.splice(existingId, 1, body);

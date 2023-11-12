@@ -19,6 +19,7 @@ export const routes: Routes = [
     loadComponent: () => import('./settings/settings.component'),
   },
   {
+    title: 'Collections',
     path: 'collections',
     loadChildren: () =>
       import('@score/collections').then((m) => m.CollectionRoutes),

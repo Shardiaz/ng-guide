@@ -1,24 +1,20 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { CollectionService } from '@score/api';
-import { map } from 'rxjs';
+import { CollectionsService } from './collections.service';
 
 export const CollectionRoutes: Routes = [
   {
-    title: 'Collections',
-    path: '',
+    path: 'overview',
     loadComponent: () => import('./overview/overview.component'),
   },
   {
-    path: 'model/:id',
+    path: ':id',
     title: (activatedRoute) =>
-      inject(CollectionService)
-        .get(activatedRoute.paramMap.get('id') || '')
-        .pipe(map((item) => item?.name || 'New Model')),
+      inject(CollectionsService).resolveName(activatedRoute.paramMap.get('id')),
     loadComponent: () => import('./edit/edit.component'),
   },
   {
     path: '**',
-    redirectTo: 'dashboard',
+    redirectTo: 'overview',
   },
 ];

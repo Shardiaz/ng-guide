@@ -7,7 +7,7 @@
     last as last
   "
   [style.z-index]="count - i"
-  [style.--shade]="i / count"
+  [style.--shade]="(count - i - 1) / count"
   [attr.disabled]="last || undefined"
   [routerLink]="route.url"
 >

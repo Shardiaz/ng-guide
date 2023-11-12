@@ -1,1 +1,16 @@
-<p>overview works!</p>
+<button routerLink="../-">add</button>
+<div class="list">
+  @for (collection of collections$ | async;track collection.id) {
+  <ui-card routerLink="../{{ collection.id }}">
+    <span cardHeader>{{ collection.name }}</span>
+    <span>{{ collection.description }}</span>
+    <div class="badges" cardFooter>
+      @for (kpi of collection.kpis; track $index) {
+      <span class="badge" cardTag>
+        {{ kpi.name }}
+      </span>
+      }
+    </div>
+  </ui-card>
+  }
+</div>

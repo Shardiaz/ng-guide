@@ -29,7 +29,7 @@ export class NavBarComponent implements OnDestroy {
       filter((event) => !event.snapshot.children.length),
       map((event) =>
         // the root is empty url
-        event.snapshot.pathFromRoot.filter((item) => item.title)
+        event.snapshot.pathFromRoot.filter((item) => !!item.routeConfig?.title)
       )
     );
   }

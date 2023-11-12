@@ -1,11 +1,58 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {
+  AbstractControl,
+  FormBuilder,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Collection, CollectionService } from '@score/api';
+import { map, of, switchMap } from 'rxjs';
+import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
 
 @Component({
-  selector: 'col-edit',
+  selector: 'lib-edit-model',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, EditKpiComponent],
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss',
+  styleUrls: ['./edit.component.scss'],
 })
-export default class EditComponent {}
+export default class EditModelComponent {
+  public form$ = this.route.paramMap.pipe(
+    switchMap((params) => {
+      const id = params.get('id');
+      if (!id || id === '-') {
+        const empty: Collection = {
+          name: '',
+        };
+        return of(empty);
+      }
+      return this.collectionService.get(id);
+    }),
+    map((item) => {
+      return this.fb.group({
+        name: item.name,
+        description: item.description,
+        id: item.id,
+        kpis: this.fb.array((item.kpis ?? []).map((kpi) => this.fb.group(kpi))),
+      });
+    })
+  );
+
+  constructor(
+    private fb: FormBuilder,
+    private collectionService: CollectionService,
+    private route: ActivatedRoute
+  ) {}
+
+  public async save(formGroup: AbstractControl) {
+    const formValue = formGroup.value;
+    if (formValue.id) {
+      this.collectionService.update(formValue).subscribe();
+    } else {
+      this.collectionService.add(formValue).subscribe();
+    }
+
+    formGroup.reset(formValue);
+  }
+}
