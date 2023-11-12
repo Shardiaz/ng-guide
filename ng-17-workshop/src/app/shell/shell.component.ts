@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   NavigationComponent,
   NavigationItem,
@@ -26,12 +26,14 @@ export class ShellComponent {
       text: 'Settings',
     },
     {
-      key: 'help',
+      key: 'faq',
       text: 'FAQ',
     },
   ];
 
+  constructor(private router: Router) {}
+
   public activate(item: NavigationItem) {
-    alert(item.key);
+    this.router.navigate([item.key]);
   }
 }

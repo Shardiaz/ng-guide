@@ -22,3 +22,11 @@ create your first interactive component
 ```bash
 ng generate component navigation
 ```
+
+create routes
+
+```bash
+ng g component home
+ng g component faq
+ng g component settings
+```
