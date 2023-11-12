@@ -1,0 +1,33 @@
+@import "font";
+@import "colors/purple";
+@import "colors/blue";
+@import "colors/green";
+@import "elements/select";
+@import "elements/input";
+@import "elements/form";
+@import "elements/button";
+@import "elements/badge";
+
+body {
+  color: var(--text-color);
+  background: var(--bg-color);
+  font-family: "roboto";
+}
+
+:root {
+  --card-background: var(--dark-color);
+  --card-color: var(--light-color);
+  --card-header-color: var(--light-color);
+  --card-shadow: 0.25rem 0.25rem 5px rgba(var(--shadow-color-rgb), 0.3);
+  --card-border-radius: var(--border-radius);
+  --card-padding: var(--content-padding);
+  --nav-bar-color: var(--dark-color);
+  --nav-bar-background: var(--light-color);
+  --nav-bar-border-radiu: 0.8rem;
+
+  --outline-width: 1px;
+  --border-width: 1px;
+  --border-radius: 1rem;
+  --input-padding: 0.5rem 1rem;
+  --content-padding: 2rem;
+}
