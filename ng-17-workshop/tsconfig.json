@@ -20,7 +20,8 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "@ui": ["./dist/ui"]
+      "@score/ui": ["./dist/ui"],
+      "@score/api": ["./dist/api"]
     },
     "lib": ["ES2022", "dom"]
   },

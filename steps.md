@@ -32,7 +32,7 @@ ng g component settings
 ```
 
 create a library for domain unspecifc components
-, update tsconfig import with @ui
+, update tsconfig import with @score/ui
 
 ```bash
 ng g library ui --prefix=ui

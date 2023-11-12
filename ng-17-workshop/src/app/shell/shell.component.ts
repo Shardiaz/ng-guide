@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { NavBarComponent, Theme, ThemeSwitchComponent } from '@ui';
+import { NavBarComponent, Theme, ThemeSwitchComponent } from '@score/ui';
 import {
   NavigationComponent,
   NavigationItem,

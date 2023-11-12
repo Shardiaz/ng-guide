@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { CardComponent } from '@score/ui';
 
 @Component({
   selector: 'score-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}
