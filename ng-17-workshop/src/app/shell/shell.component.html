@@ -5,7 +5,7 @@
     [items]="navigation"
     (itemSelected)="activate($event)"
   ></score-navigation>
-  <ui-theme-switch class="theme"></ui-theme-switch>
+  <ui-theme-switch [themes]="availableThemes" class="theme"></ui-theme-switch>
   <ui-nav-bar class="nav-bar"></ui-nav-bar>
 </header>
 <main>

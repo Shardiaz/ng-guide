@@ -1,0 +1,41 @@
+:host {
+  --background: var(--card-background, #443d4e);
+  --color: var(--card-color, #b4a6bd);
+  --header-color: var(--card-header-color, #8e789c);
+  --shadow: var(--card-shadow, 0.25rem 0.25rem 5px rgba(0, 0, 0, 0.3));
+  --border-radius: var(--card-border-radius, 2rem);
+  --padding: var(--card-padding, 2rem);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  background-color: var(--background);
+  align-items: center;
+  box-shadow: var(--shadow);
+  gap: 0.5rem;
+  transition: transform 350ms ease-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    transition: transform 150ms ease-out;
+  }
+}
+
+.card-header {
+  color: var(--header-color);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.card-content {
+  flex-grow: 1;
+  color: var(--color);
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}

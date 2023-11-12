@@ -1,1 +1,15 @@
-<p>nav-bar works!</p>
+<div
+  class="nav-bar-item"
+  *ngFor="
+    let route of routes$ | async;
+    index as i;
+    count as count;
+    last as last
+  "
+  [style.z-index]="count - i"
+  [style.--shade]="i / count"
+  [attr.disabled]="last || undefined"
+  [routerLink]="route.url"
+>
+  {{ route.title }}
+</div>

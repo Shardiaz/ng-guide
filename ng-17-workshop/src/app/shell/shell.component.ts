@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { NavBarComponent, ThemeSwitchComponent } from '@ui';
+import { NavBarComponent, Theme, ThemeSwitchComponent } from '@ui';
 import {
   NavigationComponent,
   NavigationItem,
@@ -36,6 +36,12 @@ export class ShellComponent {
       key: 'faq',
       text: 'FAQ',
     },
+  ];
+
+  public availableThemes: Theme[] = [
+    'purple',
+    { key: 'blue', name: 'ocean' },
+    { key: 'green', name: 'mint' },
   ];
 
   constructor(private router: Router) {}
