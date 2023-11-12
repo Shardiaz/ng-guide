@@ -30,3 +30,18 @@ ng g component home
 ng g component faq
 ng g component settings
 ```
+
+create a library for domain unspecifc components
+, update tsconfig import with @ui
+
+```bash
+ng g library ui --prefix=ui
+```
+
+create components and export them
+
+```bash
+ng g component card --project=ui
+ng g component nav-bar --project=ui
+ng g component theme-switch --project=ui
+```
