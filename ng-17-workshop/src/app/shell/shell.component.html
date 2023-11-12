@@ -1,5 +1,9 @@
 <header>
   <h1>{{ appTitle }}</h1>
+  <score-navigation
+    [items]="navigation"
+    (itemSelected)="activate($event)"
+  ></score-navigation>
 </header>
 <main>
   <router-outlet></router-outlet>

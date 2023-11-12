@@ -16,3 +16,9 @@ create your first component
 ```bash
 ng generate component shell
 ```
+
+create your first interactive component
+
+```bash
+ng generate component navigation
+```
