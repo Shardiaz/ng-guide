@@ -8,13 +8,31 @@
 h1 {
   text-transform: uppercase;
   font-weight: 700;
-  margin: 1rem;
 }
 
 header {
-  display: flex;
+  padding: 1rem;
+  display: grid;
   gap: 1rem;
-  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  place-items: center;
+  grid-template-areas:
+    "title links theme"
+    "nav nav nav ";
+
+  .title {
+    grid-area: title;
+  }
+  .navigation {
+    grid-area: links;
+  }
+  .nav-bar {
+    grid-area: nav;
+    place-self: stretch;
+  }
+  .theme {
+    grid-area: theme;
+  }
 }
 
 main {

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { NavBarComponent, ThemeSwitchComponent } from '@ui';
 import {
   NavigationComponent,
   NavigationItem,
@@ -9,7 +10,13 @@ import {
 @Component({
   selector: 'score-shell',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavigationComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    NavigationComponent,
+    NavBarComponent,
+    ThemeSwitchComponent,
+  ],
   templateUrl: './shell.component.html',
   styleUrl: './shell.component.scss',
 })

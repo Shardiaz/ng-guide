@@ -1,9 +1,12 @@
 <header>
-  <h1>{{ appTitle }}</h1>
+  <h1 class="title">{{ appTitle }}</h1>
   <score-navigation
+    class="navigation"
     [items]="navigation"
     (itemSelected)="activate($event)"
   ></score-navigation>
+  <ui-theme-switch class="theme"></ui-theme-switch>
+  <ui-nav-bar class="nav-bar"></ui-nav-bar>
 </header>
 <main>
   <router-outlet></router-outlet>
