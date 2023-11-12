@@ -19,6 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./settings/settings.component'),
   },
   {
+    path: 'collections',
+    loadChildren: () =>
+      import('@score/collections').then((m) => m.CollectionRoutes),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },

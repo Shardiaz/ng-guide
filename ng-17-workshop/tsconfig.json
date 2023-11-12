@@ -21,7 +21,8 @@
     "useDefineForClassFields": false,
     "paths": {
       "@score/ui": ["./dist/ui"],
-      "@score/api": ["./dist/api"]
+      "@score/api": ["./dist/api"],
+      "@score/collections": ["./dist/collections"]
     },
     "lib": ["ES2022", "dom"]
   },

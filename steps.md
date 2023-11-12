@@ -51,3 +51,19 @@ build the lib to use
 ```bash
 ng build ui --watch
 ```
+
+create a library for api access.
+export models services and interceptors
+
+```bash
+ng g library api
+```
+
+create a self contained part of the application.
+Export child routes
+
+```bash
+ng g library collections --prefix=col
+ng g component overview --project=collections
+ng g component edit --project=collections
+```
