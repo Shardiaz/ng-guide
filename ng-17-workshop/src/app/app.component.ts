@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ShellComponent } from './shell/shell.component';
 
 @Component({
   selector: 'score-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  imports: [CommonModule, ShellComponent],
+  template: '<score-shell appTitle="{{title}}"></score-shell>',
 })
 export class AppComponent {
-  title = 'ng-17-workshop';
+  title = 'Angular 17 workshop';
 }
