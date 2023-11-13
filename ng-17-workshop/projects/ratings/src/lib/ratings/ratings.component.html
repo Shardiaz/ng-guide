@@ -1,2 +1,12 @@
 <button routerLink="./-">Add Rating</button>
-<router-outlet></router-outlet>
+@for (rating of ratings$| async; track rating.id) {
+<ui-card routerLink="./{{ rating.id }}">
+  <span cardHeader>{{ rating.name }}</span>
+  {{ rating.description }}
+  @for (value of rating.values; track $index) {
+  <span badge cardFooter>
+    <strong>{{ value.name }}</strong> {{ value.value }}
+  </span>
+  }
+</ui-card>
+}

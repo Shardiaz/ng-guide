@@ -1,1 +1,33 @@
-<p>edit works!</p>
+@if (form$ | async; as form) {
+<form [formGroup]="form" (ngSubmit)="save(form)">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  @if(collection$ | async; as collection){
+  <div class="kpis">
+    @for (valueForm of form.controls.values.controls; track $index) {
+    <div class="form-group" [formGroup]="valueForm">
+      <label for="name">{{ valueForm.value.name }}</label>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="value">Value</label>
+        <textarea id="value" formControlName="value"></textarea>
+      </div>
+    </div>
+    }
+  </div>
+  }
+  <button primary *ngIf="form.dirty" [disabled]="!form.valid" type="submit">
+    Save
+  </button>
+  <button type="button" routerLink="..">Cancel</button>
+</form>
+}

@@ -27,7 +27,7 @@ export default class EditModelComponent {
         };
         return of(empty);
       }
-      return this.collectionService.get(id);
+      return this.apiService.get(id);
     }),
     map((item) => {
       return this.fb.group({
@@ -41,16 +41,16 @@ export default class EditModelComponent {
 
   constructor(
     private fb: FormBuilder,
-    private collectionService: CollectionService,
+    private apiService: CollectionService,
     private route: ActivatedRoute
   ) {}
 
   public async save(formGroup: AbstractControl) {
     const formValue = formGroup.value;
     if (formValue.id) {
-      this.collectionService.update(formValue).subscribe();
+      this.apiService.update(formValue).subscribe();
     } else {
-      this.collectionService.add(formValue).subscribe();
+      this.apiService.add(formValue).subscribe();
     }
 
     formGroup.reset(formValue);

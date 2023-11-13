@@ -7,7 +7,7 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { KPI, KPIType } from '@score/api';
+import { KPI } from '@score/api';
 
 @Component({
   selector: 'lib-edit-kpi',
@@ -36,8 +36,6 @@ export class EditKpiComponent {
     this.formArray.push(
       this.fb.group<KPI>({
         name: '',
-        options: [],
-        type: KPIType.rating,
         description: '',
       })
     );

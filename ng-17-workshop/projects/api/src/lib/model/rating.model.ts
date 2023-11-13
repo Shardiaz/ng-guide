@@ -5,7 +5,7 @@ export interface Rating {
   collectionId?: string;
   name: string;
   description?: string;
-  values: Record<string, KPIValue>;
+  values: KPIValue[];
   created: number;
   edited: number;
   createdById: string;

@@ -8,15 +8,17 @@ import {
   RatingService,
 } from '@score/api';
 import {
+  CardComponent,
   DetailTemplateDirective,
   ItemBrowserComponent,
   ItemTemplateDirective,
 } from '@score/ui';
 import { Observable, forkJoin, map, mergeMap, shareReplay } from 'rxjs';
 
+type TopList = { kpi: string; rating: string; value: number };
 interface CollectionWithRatings extends Collection {
   ratings: Rating[];
-  medians: { name: string; display: string }[];
+  topLists: TopList[];
 }
 
 @Component({
@@ -27,6 +29,7 @@ interface CollectionWithRatings extends Collection {
     ItemBrowserComponent,
     ItemTemplateDirective,
     DetailTemplateDirective,
+    CardComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
@@ -64,16 +67,33 @@ export default class DashboardComponent {
     collection: Collection
   ): Observable<CollectionWithRatings> {
     return this.ratings$.pipe(
-      map((ratings) => ({
-        ...collection,
-        ratings: ratings.filter(
+      map((allRatings) => {
+        const ratings = allRatings.filter(
           (rating) => rating.collectionId === collection.id
-        ),
-        medians: [
-          { name: 'level', display: '4/5' },
-          { name: 'comprehension', display: '75%' },
-        ], // collection.kpis?.map()
-      }))
+        );
+        const maxKpi: Record<string, number> = {};
+        const topLists = Object.values(
+          ratings.reduce((result, rating) => {
+            for (const kpiValue of rating.values) {
+              if ((maxKpi[kpiValue.name] ?? '') < kpiValue.value) {
+                maxKpi[kpiValue.name] = kpiValue.value;
+                result[kpiValue.name] = {
+                  rating: rating.name,
+                  kpi: kpiValue.name,
+                  value: kpiValue.value,
+                };
+              }
+            }
+
+            return result;
+          }, {} as Record<string, TopList>)
+        );
+        return {
+          ...collection,
+          ratings,
+          topLists,
+        };
+      })
     );
   }
 }

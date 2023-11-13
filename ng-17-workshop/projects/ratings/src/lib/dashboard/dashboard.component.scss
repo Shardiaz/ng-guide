@@ -1,0 +1,17 @@
+ui-card {
+  --background: var(--light-color);
+  --color: var(--dark-color);
+  --header-color: var(--dark-color);
+}
+
+.top-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.top-lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

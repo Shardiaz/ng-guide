@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { RatingService } from '@score/api';
+import { CardComponent } from '@score/ui';
 import { Subject, filter, map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'rate-ratings',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, CardComponent],
   templateUrl: './ratings.component.html',
   styleUrl: './ratings.component.scss',
 })

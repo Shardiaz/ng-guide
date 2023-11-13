@@ -1,8 +1,5 @@
 export interface KPIValue {
+  kpiId?: string;
   description?: string;
   value: number | string[];
-  created: number;
-  edited: number;
-  createdById: string;
-  editedById: string;
 }
