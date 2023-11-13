@@ -1,1 +1,20 @@
-<p>dashboard works!</p>
+@if(collections$ | async; as collections){
+<ui-item-browser [items]="collections" (editItem)="editItem($event)">
+  <ng-template [itemOf]="collections" let-collection>
+    <div class="flex-col center-items">
+      <span>{{ collection.name }}</span>
+      <span>{{ collection.description }}</span>
+      <span>Ratings: {{ collection.ratings.length }}</span>
+    </div>
+  </ng-template>
+  <ng-template [detailOf]="collections" let-collection>
+    {{ collection.name }}
+    @for (median of collection.medians; track $index) {
+    <div>
+      {{ median.name }}
+      <span badge>{{ median.display }}</span>
+    </div>
+    }
+  </ng-template>
+</ui-item-browser>
+}

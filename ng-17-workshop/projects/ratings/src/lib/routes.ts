@@ -4,11 +4,15 @@ import { CollectionService, RatingService } from '@score/api';
 import { RatingsService } from './ratings.service';
 
 const canActivateCollectionId = (route: ActivatedRouteSnapshot) => {
-  inject(CollectionService).exists(route.paramMap.get('collectionId'));
+  const id = route.paramMap.get('collectionId');
+  if (id == '-') return true;
+  return inject(CollectionService).exists(id);
 };
 
 const canActivateRatingId = (route: ActivatedRouteSnapshot) => {
-  inject(RatingService).exists(route.paramMap.get('id'));
+  const id = route.paramMap.get('id');
+  if (id == '-') return true;
+  return inject(RatingService).exists(id);
 };
 
 export const RatingRoutes: Routes = [
@@ -23,16 +27,21 @@ export const RatingRoutes: Routes = [
         activatedRoute.paramMap.get('collectionId')
       ),
     canActivate: [canActivateCollectionId],
-    loadComponent: () => import('./ratings/ratings.component'),
-  },
-  {
-    path: ':collectionId/:id',
-    title: (activatedRoute) =>
-      inject(RatingsService).resolveRatingName(
-        activatedRoute.paramMap.get('id')
-      ),
-    canActivate: [canActivateRatingId],
-    loadComponent: () => import('./ratings/ratings.component'),
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./ratings/ratings.component'),
+      },
+      {
+        path: ':id',
+        title: (activatedRoute) =>
+          inject(RatingsService).resolveRatingName(
+            activatedRoute.paramMap.get('id')
+          ),
+        canActivate: [canActivateRatingId],
+        loadComponent: () => import('./edit/edit.component'),
+      },
+    ],
   },
   {
     path: '**',

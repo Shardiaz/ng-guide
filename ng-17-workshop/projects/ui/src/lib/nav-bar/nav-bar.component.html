@@ -1,15 +1,10 @@
-<div
+<a
   class="nav-bar-item"
-  *ngFor="
-    let route of routes$ | async;
-    index as i;
-    count as count;
-    last as last
-  "
+  *ngFor="let data of routes$ | async; index as i; count as count; last as last"
   [style.z-index]="count - i"
   [style.--shade]="(count - i - 1) / count"
   [attr.disabled]="last || undefined"
-  [routerLink]="route.url"
+  [routerLink]="data.resolvedPath"
 >
-  {{ route.title }}
-</div>
+  {{ data.route.title }}
+</a>

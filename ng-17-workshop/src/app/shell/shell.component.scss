@@ -17,7 +17,7 @@ h1 {
 }
 
 header {
-  padding: 1rem;
+  padding: var(--content-padding);
   display: grid;
   gap: 1rem;
   grid-template-columns: auto 1fr auto;
@@ -43,4 +43,5 @@ header {
 
 main {
   flex-grow: 1;
+  padding: var(--content-padding);
 }

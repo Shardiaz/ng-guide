@@ -10,6 +10,11 @@ import {
 } from '@angular/router';
 import { Observable, Subject, filter, map, takeUntil } from 'rxjs';
 
+type RouteData = {
+  route: ActivatedRouteSnapshot;
+  resolvedPath: string[];
+};
+
 @Component({
   selector: 'ui-nav-bar',
   standalone: true,
@@ -18,7 +23,7 @@ import { Observable, Subject, filter, map, takeUntil } from 'rxjs';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent implements OnDestroy {
-  public routes$: Observable<ActivatedRouteSnapshot[]>;
+  public routes$: Observable<RouteData[]>;
   private destroy$ = new Subject<void>();
 
   constructor(private router: Router) {
@@ -29,7 +34,12 @@ export class NavBarComponent implements OnDestroy {
       filter((event) => !event.snapshot.children.length),
       map((event) =>
         // the root is empty url
-        event.snapshot.pathFromRoot.filter((item) => !!item.routeConfig?.title)
+        event.snapshot.pathFromRoot
+          .filter((item) => !!item.routeConfig?.title)
+          .map((route) => ({
+            route,
+            resolvedPath: this.resolvePath(route.pathFromRoot),
+          }))
       )
     );
   }
@@ -45,5 +55,14 @@ export class NavBarComponent implements OnDestroy {
       default:
         return false;
     }
+  }
+
+  private resolvePath(pathFromRoot: ActivatedRouteSnapshot[]): string[] {
+    return pathFromRoot
+      .filter((route) => !!route.url.length)
+      .reduce((result, route) => {
+        result.push(...route.url.map((u) => u.path));
+        return result;
+      }, new Array<string>());
   }
 }

@@ -1,1 +1,26 @@
-<p>item-browser works!</p>
+<div class="items-container">
+  @for (item of items; track item) {
+  <div
+    class="item-container"
+    [class.selected]="selected === item"
+    (click)="select(item)"
+  >
+    @if(itemTemplate){
+    <ng-container
+      *ngTemplateOutlet="itemTemplate.template; context: { $implicit: item }"
+    ></ng-container>
+    }
+  </div>
+  } @empty { No items }
+</div>
+@if(detailTemplate && !!selected){
+<div class="item-details">
+  <button primary (click)="editItem.emit(selected)">view</button>
+  <ng-container
+    *ngTemplateOutlet="
+      detailTemplate.template;
+      context: { $implicit: selected }
+    "
+  ></ng-container>
+</div>
+}
