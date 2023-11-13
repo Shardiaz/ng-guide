@@ -25,6 +25,11 @@ export const routes: Routes = [
       import('@score/collections').then((m) => m.CollectionRoutes),
   },
   {
+    title: 'Ratings',
+    path: 'ratings',
+    loadChildren: () => import('@score/ratings').then((m) => m.RatingRoutes),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },

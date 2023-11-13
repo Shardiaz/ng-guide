@@ -4,6 +4,12 @@
   display: flex;
   flex-direction: column;
 }
+a[routerLink] {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
 
 h1 {
   text-transform: uppercase;

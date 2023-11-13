@@ -1,5 +1,9 @@
 <header>
-  <h1 class="title">{{ appTitle }}</h1>
+  @if(!!appTitle){
+  <a routerLink="/">
+    <h1 class="title">{{ appTitle }}</h1>
+  </a>
+  }
   <score-navigation
     class="navigation"
     [items]="navigation"

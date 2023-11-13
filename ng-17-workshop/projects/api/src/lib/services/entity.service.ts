@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { Entity } from '../model/entity.model';
 
 export abstract class EntityService<T extends Entity> {
@@ -23,5 +23,14 @@ export abstract class EntityService<T extends Entity> {
 
   public delete(id: string): Observable<void> {
     return this.http.delete<void>(`/api/${this.collection}/${id}`);
+  }
+
+  public exists(id?: string | null): Observable<boolean> | boolean {
+    if (!id) return false;
+
+    return this.get(id).pipe(
+      map((item) => !!item),
+      catchError(() => of(false))
+    );
   }
 }
