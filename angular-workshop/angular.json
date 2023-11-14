@@ -20,18 +20,11 @@
             "outputPath": "dist/angular-workshop",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -82,29 +75,18 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }
@@ -134,19 +116,13 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ui/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "projects/ui/**/*.ts",
-              "projects/ui/**/*.html"
-            ]
+            "lintFilePatterns": ["projects/ui/**/*.ts", "projects/ui/**/*.html"]
           }
         }
       }
@@ -176,10 +152,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/api/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
@@ -193,23 +166,23 @@
         }
       }
     },
-    "nested-route": {
+    "ratings": {
       "projectType": "library",
-      "root": "projects/nested-route",
-      "sourceRoot": "projects/nested-route/src",
-      "prefix": "lib",
+      "root": "projects/ratings",
+      "sourceRoot": "projects/ratings/src",
+      "prefix": "rate",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/nested-route/ng-package.json"
+            "project": "projects/ratings/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/nested-route/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ratings/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/nested-route/tsconfig.lib.json"
+              "tsConfig": "projects/ratings/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -217,19 +190,55 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/nested-route/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "tsConfig": "projects/ratings/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": [
-              "projects/nested-route/**/*.ts",
-              "projects/nested-route/**/*.html"
+              "projects/ratings/**/*.ts",
+              "projects/ratings/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "collections": {
+      "projectType": "library",
+      "root": "projects/collections",
+      "sourceRoot": "projects/collections/src",
+      "prefix": "col",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/collections/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/collections/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/collections/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/collections/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/collections/**/*.ts",
+              "projects/collections/**/*.html"
             ]
           }
         }
@@ -237,9 +246,7 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "@angular-eslint/schematics"
-    ]
+    "schematicCollections": ["@angular-eslint/schematics"]
   },
   "schematics": {
     "@schematics/angular:component": {

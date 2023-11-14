@@ -20,13 +20,13 @@ type RouteData = {
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss'],
+  styleUrl: './nav-bar.component.scss',
 })
 export class NavBarComponent implements OnDestroy {
   public routes$: Observable<RouteData[]>;
   private destroy$ = new Subject<void>();
 
-  constructor(private router: Router) {
+  constructor(router: Router) {
     this.routes$ = router.events.pipe(
       takeUntil(this.destroy$),
       filter(this.isActivationEnd),

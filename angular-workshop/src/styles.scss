@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "style/theme";
+@import "style/utils";
+
+body {
+  margin: 0;
+  padding: 0;
+}

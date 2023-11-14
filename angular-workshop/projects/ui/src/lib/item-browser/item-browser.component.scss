@@ -1,0 +1,42 @@
+:host {
+  --background: var(--items-background, #443d4e);
+  --color: var(--items-color, #b4a6bd);
+  --header-color: var(--items-header-color, #8e789c);
+  --shadow: var(--items-shadow, 0.25rem 0.25rem 5px rgba(0, 0, 0, 0.3));
+  --border-radius: var(--items-border-radius, 2rem);
+  --padding: var(--items-padding, 2rem);
+
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 1rem;
+}
+.items-container {
+  display: flex;
+  gap: 1rem;
+}
+.item-container {
+  cursor: pointer;
+  color: var(--background);
+  background: var(--color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  &.selected {
+    cursor: default;
+    color: var(--color);
+    background: var(--background);
+  }
+}
+
+.item-details {
+  color: var(--background);
+  border-radius: var(--border-radius);
+  background: var(--color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--background);
+  box-shadow: var(--shadow);
+  flex-grow: 1;
+}

@@ -1,0 +1,25 @@
+<div class="items-container">
+  <div
+    tabindex="0"
+    *ngFor="let item of items"
+    class="item-container"
+    [class.selected]="selected === item"
+    (click)="select(item)"
+    (keydown.enter)="select(item)"
+  >
+    <ng-container *ngIf="!!itemTemplate">
+      <ng-container
+        *ngTemplateOutlet="itemTemplate.template; context: { $implicit: item }"
+      ></ng-container>
+    </ng-container>
+  </div>
+</div>
+<div class="item-details" *ngIf="detailTemplate && !!selected">
+  <button primary (click)="editItem.emit(selected)">view</button>
+  <ng-container
+    *ngTemplateOutlet="
+      detailTemplate.template;
+      context: { $implicit: selected }
+    "
+  ></ng-container>
+</div>

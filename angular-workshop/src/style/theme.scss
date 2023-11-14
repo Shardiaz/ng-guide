@@ -21,6 +21,14 @@ body {
   --card-shadow: 0.25rem 0.25rem 5px rgba(var(--shadow-color-rgb), 0.3);
   --card-border-radius: var(--border-radius);
   --card-padding: var(--content-padding);
+
+  --items-background: var(--light-color);
+  --items-color: var(--dark-color);
+  --items-header-color: var(--dark-color);
+  --items-shadow: 0.25rem 0.25rem 5px rgba(var(--shadow-color-rgb), 0.3);
+  --items-border-radius: var(--border-radius);
+  --items-padding: var(--content-padding);
+
   --nav-bar-color: var(--dark-color);
   --nav-bar-background: var(--light-color);
   --nav-bar-border-radiu: 0.8rem;
