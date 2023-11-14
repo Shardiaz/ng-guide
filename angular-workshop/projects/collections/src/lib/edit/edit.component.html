@@ -1,5 +1,8 @@
-@if (form$ | async; as form) {
-<form [formGroup]="form" (ngSubmit)="save(form)">
+<form
+  *ngIf="form$ | async as form; else loading"
+  [formGroup]="form"
+  (ngSubmit)="save(form)"
+>
   <div class="form-group">
     <label for="name">Name</label>
     <input id="name" formControlName="name" />
@@ -17,4 +20,4 @@
   </button>
   <button type="button" routerLink="../overview">Cancel</button>
 </form>
-}@else { ...Loading collection }
+<ng-template #loading> ...Loading collection </ng-template>

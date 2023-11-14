@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RatingsComponent } from './ratings.component';
+import { EditKpiComponent } from './edit-kpi.component';
 
-describe('RatingsComponent', () => {
-  let component: RatingsComponent;
-  let fixture: ComponentFixture<RatingsComponent>;
+describe('EditKpiComponent', () => {
+  let component: EditKpiComponent;
+  let fixture: ComponentFixture<EditKpiComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RatingsComponent]
+      imports: [EditKpiComponent]
     });
-    fixture = TestBed.createComponent(RatingsComponent);
+    fixture = TestBed.createComponent(EditKpiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

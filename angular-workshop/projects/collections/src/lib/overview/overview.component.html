@@ -1,0 +1,15 @@
+<button routerLink="../-">add</button>
+<div class="list">
+  <ui-card
+    *ngFor="let collection of collections$ | async"
+    routerLink="../{{ collection.id }}"
+  >
+    <span cardHeader>{{ collection.name }}</span>
+    <span>{{ collection.description }}</span>
+    <div class="badges" cardFooter>
+      <span *ngFor="let kpi of collection.kpis" class="badge" cardFooter>
+        {{ kpi.name }}
+      </span>
+    </div>
+  </ui-card>
+</div>

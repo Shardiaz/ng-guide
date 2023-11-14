@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { Collection, CollectionService } from '@score/api';
+import { Collection, CollectionService } from '@slides/api';
 import { map, of, switchMap } from 'rxjs';
 import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
 
@@ -15,7 +15,7 @@ import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule, EditKpiComponent],
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss',
+  styleUrls: ['./edit.component.scss'],
 })
 export default class EditModelComponent {
   public form$ = this.route.paramMap.pipe(

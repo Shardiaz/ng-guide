@@ -7,14 +7,14 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { KPI } from '@score/api';
+import { KPI } from '@slides/api';
 
 @Component({
   selector: 'col-edit-kpi',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './edit-kpi.component.html',
-  styleUrl: './edit-kpi.component.scss',
+  styleUrls: ['./edit-kpi.component.scss'],
 })
 export class EditKpiComponent {
   public get formArray() {
