@@ -1,11 +1,7 @@
 /*
  * Public API Surface of api
  */
-// SERVICES
-export * from './lib/services/collection.service';
+export * from './lib/mock-backend.interceptor';
 
-// MODELS
-export * from './lib/models/collection.model';
-export * from './lib/models/kpi-type.model';
-export * from './lib/models/kpi.model';
-export * from './lib/models/project.model';
+export * from './lib/model';
+export * from './lib/services';

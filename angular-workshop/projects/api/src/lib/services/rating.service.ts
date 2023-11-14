@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Collection } from '../model/collection.model';
+import { Rating } from '../model/rating.model';
 import { EntityService } from './entity.service';
 
 @Injectable({ providedIn: 'root' })
-export class CollectionService extends EntityService<Collection> {
+export class RatingService extends EntityService<Rating> {
   constructor(http: HttpClient) {
-    super(http, 'collection');
+    super(http, 'rating');
   }
 }

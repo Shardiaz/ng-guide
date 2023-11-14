@@ -1,7 +1,7 @@
 import { KPI } from './kpi.model';
 
 export interface Collection {
-  id?: string | null;
+  id?: string;
   name: string;
   description?: string;
   kpis?: KPI[];
