@@ -1,9 +1,47 @@
 :host {
-  display: block;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+a[routerLink] {
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: var(--content-padding);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto 1fr auto;
+  place-items: center;
+  grid-template-areas:
+    "title links theme"
+    "nav nav nav ";
+
+  .title {
+    grid-area: title;
+  }
+  .navigation {
+    grid-area: links;
+  }
+  .nav-bar {
+    grid-area: nav;
+    place-self: stretch;
+  }
+  .theme {
+    grid-area: theme;
+  }
+}
+
+main {
+  flex-grow: 1;
+  padding: var(--content-padding);
 }

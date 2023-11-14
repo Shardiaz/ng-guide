@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { ShellComponent } from './shell/shell.component';
 
 @Component({
   selector: 'slides-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, ShellComponent],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  imports: [CommonModule, ShellComponent],
+  template: '<slides-shell appTitle="{{title}}"></slides-shell>',
 })
-export class AppComponent {}
+export class AppComponent {
+  public title = 'Angular 17 workshop';
+}
