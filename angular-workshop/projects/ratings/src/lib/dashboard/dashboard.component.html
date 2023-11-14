@@ -1,0 +1,25 @@
+<ui-item-browser
+  *ngIf="collections$ | async as collections"
+  [items]="collections"
+  (editItem)="editItem($event)"
+>
+  <ng-template [itemOf]="collections" let-collection>
+    <div class="flex-col center-items">
+      <span>{{ collection.name }}</span>
+      <span>{{ collection.description }}</span>
+      <span>Ratings: {{ collection.ratings.length }}</span>
+    </div>
+  </ng-template>
+  <ng-template [detailOf]="collections" let-collection>
+    <div class="top-lists">
+      <h1>{{ collection.name }}</h1>
+      <ui-card *ngFor="let topList of collection.topLists">
+        <h2 cardHeader>{{ topList.kpi }}</h2>
+        <div class="top-list">
+          <strong>{{ topList.rating }}</strong>
+          <span badge primary>{{ topList.value }}</span>
+        </div>
+      </ui-card>
+    </div>
+  </ng-template>
+</ui-item-browser>

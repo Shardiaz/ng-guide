@@ -1,0 +1,9 @@
+<button routerLink="./-">Add Rating</button>
+
+<ui-card *ngFor="let rating of ratings$ | async" routerLink="./{{ rating.id }}">
+  <span cardHeader>{{ rating.name }}</span>
+  {{ rating.description }}
+  <span *ngFor="let value of rating.values" badge cardFooter>
+    <strong>{{ value.name }}</strong> {{ value.value }}
+  </span>
+</ui-card>

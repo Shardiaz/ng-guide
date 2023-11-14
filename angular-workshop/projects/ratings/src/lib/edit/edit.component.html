@@ -1,0 +1,31 @@
+<form *ngIf="form$ | async as form" [formGroup]="form" (ngSubmit)="save(form)">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <div *ngIf="collection$ | async as collection" class="kpis">
+    <div
+      *ngFor="let valueForm of form.controls.values.controls"
+      class="form-group"
+      [formGroup]="valueForm"
+    >
+      <label for="name">{{ valueForm.value.name }}</label>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="value">Value</label>
+        <textarea id="value" formControlName="value"></textarea>
+      </div>
+    </div>
+  </div>
+  <button primary *ngIf="form.dirty" [disabled]="!form.valid" type="submit">
+    Save
+  </button>
+  <button type="button" routerLink="..">Cancel</button>
+</form>

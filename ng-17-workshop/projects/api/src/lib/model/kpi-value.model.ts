@@ -1,5 +1,7 @@
 export interface KPIValue {
-  kpiId?: string;
+  name: string;
   description?: string;
-  value: number | string[];
+  value: number;
+  prefix?: string;
+  suffix?: string;
 }
