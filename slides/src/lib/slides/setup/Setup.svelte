@@ -10,11 +10,11 @@
 <Slide topic="setup">
 	<Slide>
 		<Hero><h2>Setup your workspace</h2></Hero>
-		<Description>We require Node.js as JavaScript runtime</Description>
-		<img class="r-stretch" src={nodeLogo} alt="The Node.js logo" />
+		<Description>We require Node.js as JavaScript runtime and any ide of your choice</Description>
+		<img src={nodeLogo} alt="The Node.js logo" />
 	</Slide>
-	<CreateProject/>
-	<Architecture/>
+	<CreateProject />
+	<Architecture />
 </Slide>
 
 <style>

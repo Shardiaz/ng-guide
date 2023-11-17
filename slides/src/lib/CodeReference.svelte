@@ -1,40 +1,34 @@
-<script lang="ts" setup>
-	import { PUBLIC_API_KEY } from '$env/static/public';
-	import { Tab, TabGroup } from '@skeletonlabs/skeleton';
-	import { onMount } from 'svelte';
+<script lang="ts">
+	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+	import Code from './Code.svelte';
 
-	let content = '';
-	$: currentFile &&
-		fetch(
-			`https://gitlab.com/api/v4/projects/${projectId}/repository/files/${encodeURIComponent(
-				currentFile
-			)}/raw?ref=master&access_token=${PUBLIC_API_KEY}`
-		)
-			.then((res) => res.text())
-			.then((file) => (content = file));
+	const root = {
+		ng16: 'ng-16-workshop',
+		ng17: 'ng-17-workshop'
+	};
 
-	export let files: string[] | string;
+	export let file: string;
+	export let animationId: string | null = null;
+	export let lines: string | true | null = null;
+	export let language: string | null = null;
+	export let range: [number, number] | null = null;
+
+	$: filename = file.split(/[\\/]+/).pop();
+	$: ng16 = file.replace('\\', '/').replace(root.ng17, root.ng16);
+	$: ng17 = file.replace('\\', '/').replace(root.ng16, root.ng17);
 	let currentFile = '';
-	const projectId = '51475043';
-
-	onMount(() => (currentFile = files[0]));
 </script>
 
-<TabGroup>
-	{#each files as file}
-		<Tab bind:group={currentFile} value={file} name="currentFile">
-			<svelte:fragment slot="lead">icon</svelte:fragment>
-			{file}
-		</Tab>
-	{/each}
-
-	<svelte:fragment slot="panel">
-		{#each files as file, index}
-			{#if currentFile === file}
-				<pre>
-				<code class={`language-${currentFile.split('.').pop()}`} data-trim data-noescape>{content}</code>
-			</pre>
-			{/if}
-		{/each}
-	</svelte:fragment>
-</TabGroup>
+<div class="flex items-center justify-center gap-4">
+	<span class="badge variant-filled text-lg">{filename}</span>
+	<RadioGroup>
+		<RadioItem bind:group={currentFile} name="currentFile" value={ng16}>v16</RadioItem>
+		<RadioItem bind:group={currentFile} name="currentFile" value={ng17}>v17</RadioItem>
+	</RadioGroup>
+</div>
+<div class:hidden={currentFile === ng17}>
+	<Code external={ng16} {animationId} {lines} {language} {range} />
+</div>
+<div class:hidden={currentFile !== ng17}>
+	<Code external={ng17} {animationId} {lines} {language} {range} />
+</div>

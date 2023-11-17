@@ -8,5 +8,7 @@
 	<title>ShipBit guide to Angular</title>
 </svelte:head>
 
-<HeaderBar />
-<SlideDeck />
+<div class="absolute inset-0 flex flex-col">
+	<HeaderBar />
+	<SlideDeck />
+</div>

@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { AppBar, RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 	import Hero from './Hero.svelte';
-	import { locale, t } from './translation/i18n';
+	import { locale, t } from './i18n';
 	$: curentLocale = locale.get();
 	$: locale.set(curentLocale), localStorage.setItem('slides.locale', curentLocale);
 </script>
 
 <AppBar>
 	<svelte:fragment slot="lead">
-		<button class="btn"></button>
+		<button class="btn" />
 	</svelte:fragment>
 	<span class="title-wrap">
 		<Hero>{$t('title')}</Hero>
@@ -25,7 +25,7 @@
 <style lang="scss" scoped>
 	.title-wrap {
 		max-height: 2rem;
-        font-size: 2rem;
-        text-transform: uppercase;
+		font-size: 2rem;
+		text-transform: uppercase;
 	}
 </style>

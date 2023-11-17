@@ -1,5 +1,5 @@
 export const ssr = false;
-import { loadTranslations, locales } from '$lib/translation/i18n';
+import { loadTranslations, locales } from '$lib/i18n';
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load = async () => {

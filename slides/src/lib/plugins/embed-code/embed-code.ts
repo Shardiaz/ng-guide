@@ -1,3 +1,5 @@
+import { PUBLIC_API_KEY } from '$env/static/public';
+
 const EmbedCode: Reveal.Plugin = {
 	id: 'externalCode',
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -7,6 +9,10 @@ const EmbedCode: Reveal.Plugin = {
 				const url = el.getAttribute('data-url')?.trim();
 
 				if (!url) return;
+				const projectId = '51475043';
+				const fileUrl = `https://gitlab.com/api/v4/projects/${projectId}/repository/files/${encodeURIComponent(
+					url
+				)}/raw?ref=master&access_token=${PUBLIC_API_KEY}`;
 
 				function showError(error: string, showInline = true) {
 					if (showInline) {
@@ -16,7 +22,7 @@ const EmbedCode: Reveal.Plugin = {
 					console.error(error);
 				}
 
-				return fetch(url)
+				return fetch(fileUrl)
 					.then((r) => {
 						if (r.ok !== true) {
 							showError(`code could not be loaded from ${url}: status ${r.status} returned`);
@@ -122,14 +128,12 @@ const EmbedCode: Reveal.Plugin = {
 						t = lines.join('\n');
 
 						el.textContent = t;
-                        
-                        const extension = url.split('.').pop();
-                        const classString = el.getAttribute('class') || '';
-                        if (!classString.match(/(^|\s)lang(uage)?-/)) {
-                            el.setAttribute('class', classString + ' language-' + extension);
-                        }
 
-
+						const extension = url.split('.').pop();
+						const classString = el.getAttribute('class') || '';
+						if (!classString.match(/(^|\s)lang(uage)?-/)) {
+							el.setAttribute('class', classString + ' language-' + extension);
+						}
 					})
 					.catch((e) => {
 						// todo: add git url

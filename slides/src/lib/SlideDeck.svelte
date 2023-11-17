@@ -13,6 +13,7 @@
 
 	onMount(() => {
 		Reveal.initialize({
+			embedded: false,
 			autoAnimateUnmatched: false,
 			plugins: [EmbedCode, RevealHighlight, RevealNotes]
 		});

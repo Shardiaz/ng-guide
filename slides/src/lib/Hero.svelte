@@ -15,20 +15,20 @@
 		max-height: inherit;
 	}
 
-	img{
+	img {
 		max-height: inherit;
 	}
 
-	img:has(+div> h1) {
+	img:has(+ div > h1) {
 		height: 6rem;
 	}
-	img:has(+div> h2) {
+	img:has(+ div > h2) {
 		height: 3.4rem;
 	}
-	img:has(+div> h3) {
+	img:has(+ div > h3) {
 		height: 2.4rem;
 	}
-	img:has(+div> h4) {
+	img:has(+ div > h4) {
 		height: 1.5rem;
 	}
 </style>

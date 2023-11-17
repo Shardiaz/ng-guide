@@ -9,5 +9,5 @@ import { ShellComponent } from './shell/shell.component';
   template: '<slides-shell appTitle="{{title}}"></slides-shell>',
 })
 export class AppComponent {
-  public title = 'Angular 17 workshop';
+  public title = 'Angular 16 workshop';
 }
