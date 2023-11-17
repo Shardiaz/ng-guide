@@ -1,4 +1,5 @@
 <script lang="ts">
+	import HeaderBar from '$lib/HeaderBar.svelte';
 	import SlideDeck from '$lib/SlideDeck.svelte';
 	import '../app.postcss';
 </script>
@@ -7,4 +8,5 @@
 	<title>ShipBit guide to Angular</title>
 </svelte:head>
 
-<SlideDeck/>
+<HeaderBar />
+<SlideDeck />

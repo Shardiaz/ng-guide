@@ -3,14 +3,22 @@
 	export let cssClass: string | null = null;
 </script>
 
-<div class="flex items-center justify-center gap-4">
+<div class="flex items-center justify-center gap-4 inherit-height">
 	<img class={cssClass} data-id="hero" src={hero} alt="The ShipBit Logo" />
-	<div data-id="hero-slot">
+	<div>
 		<slot />
 	</div>
 </div>
 
 <style>
+	.inherit-height {
+		max-height: inherit;
+	}
+
+	img{
+		max-height: inherit;
+	}
+
 	img:has(+div> h1) {
 		height: 6rem;
 	}
