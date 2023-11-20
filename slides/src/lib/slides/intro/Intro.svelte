@@ -10,14 +10,8 @@
 <Slide>
 	<Slide>
 		<Hero><h2>{$t('title')}</h2></Hero>
-		<img class="r-stretch" src={angularLogo} alt="Angular Logo" />
+		<img class="r-stretch center" src={angularLogo} alt="Angular Logo" />
 	</Slide>
 	<Speaker />
 	<Overview />
 </Slide>
-
-<style>
-	img {
-		margin: auto;
-	}
-</style>

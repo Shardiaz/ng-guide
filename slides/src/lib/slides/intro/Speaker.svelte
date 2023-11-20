@@ -11,7 +11,7 @@
 		<Hero cssClass="h-14"><span class="font-bold">SHIPBIT</span></Hero>
 		<div class="flex">
 			<div class="flex flex-col justify-center">
-				<span>{$t('speaker.host')}</span>
+				<span>{$t('intro.speaker.host')}</span>
 				<strong>Kingsley Owusu-Sekyere</strong>
 				<span class="italic text-xs"> Senior Software Developer </span>
 			</div>

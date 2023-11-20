@@ -1,9 +1,38 @@
 {
 	"title": "Guide to angular",
-	"setup": "Getting started",
-	"speaker.host": "Im your host",
-	"overview": {
-		"title": "Overview",
-		"description": "In this guide we will create a workspace with an ui library to explore the core concepts of Angular"
+	"intro": {
+		"speaker": {
+			"host": "Im your host"
+		},
+		"overview": {
+			"title": "Overview",
+			"description": "In this guide we will create a workspace with an ui library to explore the core concepts of Angular"
+		}
+	},
+	"setup": {
+		"environment": {
+			"title": "Setup your workspace",
+			"description": "We require Node.js as JavaScript runtime and any ide of your choice"
+		},
+		"create": {
+			"title": "Scaffold with angular cli",
+			"description": "Install the cli and create a new workspace"
+		},
+		"architecture": {
+			"layout": "Workspace Layout",
+			"layout-description": "Explore the workspace",
+			"execute": "Execute projects",
+			"execute-description": "You can use the cli or predefined scripts from your package.json"
+		}
+	},
+	"shell": {
+		"task": {
+			"title": "AppShell componet",
+			"description": "Create a component for top level layout of the app"
+		},
+		"generate": {
+			"title": "ng generate component",
+			"description": "Use the cli to scaffold a basic standalone component with template and style files"
+		}
 	}
 }

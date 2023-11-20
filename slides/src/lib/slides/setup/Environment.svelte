@@ -3,22 +3,17 @@
 	import Hero from '$lib/Hero.svelte';
 	import Slide from '$lib/Slide.svelte';
 	import nodeLogo from '$lib/assets/node.svg';
+	import { t } from '$lib/i18n';
 	import Architecture from './Architecture.svelte';
 	import CreateProject from './CreateProject.svelte';
 </script>
 
-<Slide topic="setup">
+<Slide topic="environment">
 	<Slide>
-		<Hero><h2>Setup your workspace</h2></Hero>
-		<Description>We require Node.js as JavaScript runtime and any ide of your choice</Description>
-		<img src={nodeLogo} alt="The Node.js logo" />
+		<Hero><h2>{$t('setup.environment.title')}</h2></Hero>
+		<Description>{$t('setup.environment.description')}</Description>
+		<img class="center" src={nodeLogo} alt="The Node.js logo" />
 	</Slide>
 	<CreateProject />
 	<Architecture />
 </Slide>
-
-<style>
-	img {
-		margin: auto;
-	}
-</style>

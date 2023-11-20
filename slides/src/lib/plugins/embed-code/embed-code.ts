@@ -7,25 +7,14 @@ const EmbedCode: Reveal.Plugin = {
 		return Promise.all(
 			[...document.querySelectorAll('code[data-url]')].map((el) => {
 				const url = el.getAttribute('data-url')?.trim();
+				const ref = el.getAttribute('data-ref') ?? 'master';
 
 				if (!url) return;
-				const projectId = '51475043';
-				const fileUrl = `https://gitlab.com/api/v4/projects/${projectId}/repository/files/${encodeURIComponent(
-					url
-				)}/raw?ref=master&access_token=${PUBLIC_API_KEY}`;
 
-				function showError(error: string, showInline = true) {
-					if (showInline) {
-						el.innerHTML = error;
-					}
-
-					console.error(error);
-				}
-
-				return fetch(fileUrl)
+				return fetch(fileUrl(url, ref))
 					.then((r) => {
 						if (r.ok !== true) {
-							showError(`code could not be loaded from ${url}: status ${r.status} returned`);
+							showError(el, `code could not be loaded from ${url}: status ${r.status} returned`);
 							return '';
 						}
 
@@ -40,21 +29,9 @@ const EmbedCode: Reveal.Plugin = {
 						const beautify = !el.hasAttribute('data-no-beautify');
 						const includeDelimiters = el.hasAttribute('data-include-delimiters');
 
-						function getLineNumberThatContains(text: string) {
-							for (let i = 0; i < lines.length; i++) {
-								if (lines[i].includes(text)) {
-									// add 1 as we're using line numbers, not indices
-									return i + 1;
-								}
-							}
-
-							// none found
-							return -1;
-						}
-
 						if (lineStartDelimiter !== '') {
 							// search for start delimiter and set it's line (plus offset) as the line start
-							lineStart = getLineNumberThatContains(lineStartDelimiter);
+							lineStart = getLineNumberThatContains(lines, lineStartDelimiter);
 
 							if (lineStart > 0 && !includeDelimiters) {
 								lineStart++;
@@ -63,7 +40,7 @@ const EmbedCode: Reveal.Plugin = {
 
 						if (lineEndDelimiter !== '') {
 							// search for end delimiter and set it's line (plus offset) as the line end
-							lineEnd = getLineNumberThatContains(lineEndDelimiter);
+							lineEnd = getLineNumberThatContains(lines, lineEndDelimiter);
 
 							if (lineEnd > 0 && !includeDelimiters) {
 								lineEnd--;
@@ -72,7 +49,7 @@ const EmbedCode: Reveal.Plugin = {
 
 						if (!Number.isNaN(lineEnd)) {
 							if (isNaN(lineEnd) || lineEnd > lines.length || lineEnd < 0) {
-								showError(`invalid line end specified: ${lineEnd}`, false);
+								showError(el, `invalid line end specified: ${lineEnd}`, false);
 							}
 
 							// end at line end
@@ -86,7 +63,7 @@ const EmbedCode: Reveal.Plugin = {
 								lineStart > lines.length ||
 								(lineEnd !== null && lineStart > lineEnd)
 							) {
-								showError(`invalid line start specified: ${lineStart}`, false);
+								showError(el, `invalid line start specified: ${lineStart}`, false);
 							}
 
 							// start at line start
@@ -138,6 +115,7 @@ const EmbedCode: Reveal.Plugin = {
 					.catch((e) => {
 						// todo: add git url
 						showError(
+							el,
 							`code could not be loaded from ${url} as an exception occurred: ${e}\n\nCould it be that you're not loading the presentation via a (local) server?\nOtherwise, contact the developer or open an issue at https://github.com/befocken/revealjs-embed-code.`
 						);
 					});
@@ -145,5 +123,36 @@ const EmbedCode: Reveal.Plugin = {
 		);
 	}
 };
+
+function getLineNumberThatContains(lines: string[], text: string) {
+	for (let i = 0; i < lines.length; i++) {
+		if (lines[i].includes(text)) {
+			// add 1 as we're using line numbers, not indices
+			return i + 1;
+		}
+	}
+
+	// none found
+	return -1;
+}
+
+function fileUrl(url: string, ref = 'master'): string {
+	if (url.startsWith('code') || url.startsWith('/code')) return url;
+
+	const projectId = '51475043';
+	const fileUrl = `https://gitlab.com/api/v4/projects/${projectId}/repository/files/${encodeURIComponent(
+		url
+	)}/raw?ref=${ref}&access_token=${PUBLIC_API_KEY}`;
+
+	return fileUrl;
+}
+
+function showError(element: Element, error: string, showInline = true) {
+	if (showInline) {
+		element.innerHTML = error;
+	}
+
+	console.error(error);
+}
 
 export default () => EmbedCode;

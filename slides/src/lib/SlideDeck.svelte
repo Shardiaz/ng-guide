@@ -7,9 +7,9 @@
 	import RevealNotes from 'reveal.js/plugin/notes/notes';
 
 	import { onMount } from 'svelte';
-	import Components from './slides/components/Components.svelte';
+	import AppShell from './slides/app-shell/AppShell.svelte';
 	import Intro from './slides/intro/Intro.svelte';
-	import Setup from './slides/setup/Setup.svelte';
+	import Environment from './slides/setup/Environment.svelte';
 
 	onMount(() => {
 		Reveal.initialize({
@@ -23,7 +23,7 @@
 <div class="reveal">
 	<div class="slides">
 		<Intro />
-		<Setup />
-		<Components />
+		<Environment />
+		<AppShell />
 	</div>
 </div>

@@ -6,6 +6,11 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('overview.title')}</h2></Hero>
-	<Description>{$t('overview.description')}</Description>
+	<Hero><h2>{$t('intro.overview.title')}</h2></Hero>
+	<Description>{$t('intro.overview.description')}</Description>
+	<img
+		class="r-stretch center r-frame"
+		src="app-preview.png"
+		alt="Screenshot of the workshop app"
+	/>
 </Slide>
