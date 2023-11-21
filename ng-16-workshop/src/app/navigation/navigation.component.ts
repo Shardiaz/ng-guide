@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export type NavigationItem = {
@@ -9,7 +8,6 @@ export type NavigationItem = {
 @Component({
   selector: 'score-navigation',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })

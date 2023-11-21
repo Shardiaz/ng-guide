@@ -1,3 +1,16 @@
+:root {
+	--schema: #00a2ff;
+}
+
+.schema {
+	--color: var(--schema);
+	color: var(--color);
+	border: 2px solid var(--color);
+	box-shadow: inset 0px 0 10px 2px var(--color);
+	display: grid;
+	place-items: center;
+}
+
 .reveal {
 	--non-hightlight-display: table-row;
 	img.center {

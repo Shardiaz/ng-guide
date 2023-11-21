@@ -74,11 +74,30 @@
 				}
 			},
 			"template": {
-				"title": "Required Concepts",
-				"description": "Discover Template Syntax and built-in Directives to create dynamic markup",
+				"title": "Template Syntax",
 				"inerpolation": "String interpolation as short hand for one way bindings",
 				"bindings": "Syncrhonisation of an input or output with an expression",
 				"inputs": "Discover Template Syntax and built-in Directives to create dynamic markup"
+			}
+		}
+	},
+	"nav": {
+		"title": "SPA Navigation",
+		"description": "Create link navigation and ouse angulars router api",
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "Template items and raise an event on cl",
+			"events": {
+				"title": "Component Events",
+				"description": "Use events for data flow from component to parent",
+				"subscribe": "Subscribe with an template expression"
+			},
+			"routes": {
+				"title": "Routing",
+				"description": "In SPA applications we use router frameworks to dynamicly change the content of the page",
+				"config": "Configure routes and redirects",
+				"outlet": "Use the RouterOutlet component to create a slot where the router can place the navigated component",
+				"lazy": "An advanced method is lazy loading routes that are initially unrequired to speed up page loading"
 			}
 		}
 	}

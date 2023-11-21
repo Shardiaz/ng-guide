@@ -13,10 +13,6 @@
 </Slide>
 <Slide>
 	<Hero><h3>{$t('shell.concepts.template.title')}</h3></Hero>
-	<Description>{$t('shell.concepts.template.description')}</Description>
-</Slide>
-<Slide>
-	<Hero><h3>{$t('shell.concepts.template.title')}</h3></Hero>
 	<Description>{$t('shell.concepts.template.inerpolation')}</Description>
 	<CodeReference
 		language="html"

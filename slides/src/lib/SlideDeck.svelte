@@ -9,6 +9,7 @@
 	import { onMount } from 'svelte';
 	import AppShell from './slides/app-shell/AppShell.svelte';
 	import Intro from './slides/intro/Intro.svelte';
+	import Navigation from './slides/navigation/Navigation.svelte';
 	import Environment from './slides/setup/Environment.svelte';
 
 	onMount(() => {
@@ -25,5 +26,6 @@
 		<Intro />
 		<Environment />
 		<AppShell />
+		<Navigation />
 	</div>
 </div>

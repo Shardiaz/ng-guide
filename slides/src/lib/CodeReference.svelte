@@ -41,7 +41,6 @@
 	}
 
 	function isVersioned(input: LinesInput): input is Record<Versions, LinesType> {
-		console.log(typeof input, input);
 		return typeof input === 'object';
 	}
 </script>

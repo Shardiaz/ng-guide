@@ -12,7 +12,10 @@
 	<Slide>
 		<Hero><h2>{$t('shell.task.title')}</h2></Hero>
 		<Description>{$t('shell.task.description')}</Description>
-		<div class="r-stretch shell" />
+		<div class="r-stretch shell">
+			<div class="schema">Header</div>
+			<div class="schema">Content</div>
+		</div>
 	</Slide>
 	<ShellConcepts />
 	<GenerateComponent />
@@ -21,31 +24,10 @@
 
 <style lang="scss">
 	.shell {
-		--header: rgb(0, 162, 255);
-		--content: rgb(0, 162, 255);
 		padding: 1rem;
 		display: grid;
 		gap: 0.125rem;
 		grid-template-rows: auto 1fr;
 		padding-bottom: 4rem;
-		&::before,
-		&::after {
-			--color: white;
-			color: var(--color);
-			border: 2px solid var(--color);
-			box-shadow: inset 0px 0 10px 2px var(--color);
-		}
-
-		&::before {
-			content: 'Header';
-			--color: var(--header);
-		}
-
-		&::after {
-			content: 'Content';
-			--color: var(--content);
-			display: grid;
-			place-items: center;
-		}
 	}
 </style>
