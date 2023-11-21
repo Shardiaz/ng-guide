@@ -32,7 +32,54 @@
 		},
 		"generate": {
 			"title": "ng generate component",
-			"description": "Use the cli to scaffold a basic standalone component with template and style files"
+			"description": "Use the cli to scaffold a basic standalone component with template and style files",
+			"html": {
+				"title": "Semantic markup",
+				"description": "Try to use semantic markup for a11y"
+			},
+			"ts": {
+				"title": "Component directive",
+				"description": "Besides configuring the component setup we can extend it with inputs"
+			},
+			"css": {
+				"title": "Write scoped styles",
+				"description": "We add simple css to layout the component utilizing pseudo classes and css vars"
+			}
+		},
+		"use": {
+			"title": "Use the new shell",
+			"description": "Import components to use them in the template"
+		},
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "Discover Template Syntax and built-in Directives to create dynamic markup",
+			"directives": {
+				"title": "Built-In Directives",
+				"types": "Directive Types",
+				"details": "Details",
+				"components": {
+					"title": "Components",
+					"description": "Used with a template. This type of directive is the most common directive type."
+				},
+				"attribute": {
+					"title": "Attribute directives",
+					"description": "Change the appearance or behavior of an element, component, or another directive."
+				},
+				"structural": {
+					"title": "Structural directives",
+					"description": "Change the DOM layout by adding and removing DOM elements.",
+					"ngif": "This directive wraps an element that will only be added to the dom if the condition is matched",
+					"ngfor": "This directive wraps an element as template and renders it for each item in an itteratable",
+					"ngswitch": "These directives switch among alternative views based on matching an expression"
+				}
+			},
+			"template": {
+				"title": "Required Concepts",
+				"description": "Discover Template Syntax and built-in Directives to create dynamic markup",
+				"inerpolation": "String interpolation as short hand for one way bindings",
+				"bindings": "Syncrhonisation of an input or output with an expression",
+				"inputs": "Discover Template Syntax and built-in Directives to create dynamic markup"
+			}
 		}
 	}
 }

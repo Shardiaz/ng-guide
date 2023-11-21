@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CollectionService } from '@slides/api';
-import { CardComponent } from '@slides/ui';
+import { CollectionService } from '@score/api';
+import { CardComponent } from '@score/ui';
 
 @Component({
   selector: 'col-overview',

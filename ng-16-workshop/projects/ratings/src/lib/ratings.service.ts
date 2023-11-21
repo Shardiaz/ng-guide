@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {
-  CollectionService,
-  KPIValue,
-  Rating,
-  RatingService,
-} from '@slides/api';
+import { CollectionService, KPIValue, Rating, RatingService } from '@score/api';
 import { Observable, map } from 'rxjs';
 
 @Injectable({

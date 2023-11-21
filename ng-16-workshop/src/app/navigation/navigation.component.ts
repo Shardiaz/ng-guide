@@ -7,7 +7,7 @@ export type NavigationItem = {
 };
 
 @Component({
-  selector: 'slides-navigation',
+  selector: 'score-navigation',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './navigation.component.html',

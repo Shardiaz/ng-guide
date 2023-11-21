@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { ShellComponent } from './shell/shell.component';
 
 @Component({
-  selector: 'slides-root',
+  selector: 'score-root',
   standalone: true,
   imports: [CommonModule, ShellComponent],
-  template: '<slides-shell appTitle="{{title}}"></slides-shell>',
+  template: '<score-shell appTitle="{{title}}"></score-shell>',
 })
 export class AppComponent {
   public title = 'Angular 16 workshop';

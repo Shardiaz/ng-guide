@@ -7,7 +7,7 @@ import {
   FormGroup,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { KPI } from '@slides/api';
+import { KPI } from '@score/api';
 
 @Component({
   selector: 'col-edit-kpi',

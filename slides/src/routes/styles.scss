@@ -1,6 +1,15 @@
 .reveal {
+	--non-hightlight-display: table-row;
 	img.center {
 		margin-left: auto;
 		margin-right: auto;
+	}
+
+	.hljs.has-highlights tr:not(.highlight-line) {
+		display: var(--non-hightlight-display);
+	}
+
+	section {
+		overflow: hidden;
 	}
 }

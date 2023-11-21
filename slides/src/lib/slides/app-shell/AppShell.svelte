@@ -4,6 +4,7 @@
 	import Slide from '$lib/Slide.svelte';
 	import { t } from '$lib/i18n';
 	import GenerateComponent from './GenerateComponent.svelte';
+	import ShellConcepts from './ShellConcepts.svelte';
 	import UseShell from './UseShell.svelte';
 </script>
 
@@ -13,6 +14,7 @@
 		<Description>{$t('shell.task.description')}</Description>
 		<div class="r-stretch shell" />
 	</Slide>
+	<ShellConcepts />
 	<GenerateComponent />
 	<UseShell />
 </Slide>
@@ -29,7 +31,6 @@
 		&::before,
 		&::after {
 			--color: white;
-			border-radius: 1rem;
 			color: var(--color);
 			border: 2px solid var(--color);
 			box-shadow: inset 0px 0 10px 2px var(--color);

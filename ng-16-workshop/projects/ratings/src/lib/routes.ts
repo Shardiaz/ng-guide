@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Routes } from '@angular/router';
-import { CollectionService, RatingService } from '@slides/api';
+import { CollectionService, RatingService } from '@score/api';
 import { RatingsService } from './ratings.service';
 
 const canActivateCollectionId = (route: ActivatedRouteSnapshot) => {

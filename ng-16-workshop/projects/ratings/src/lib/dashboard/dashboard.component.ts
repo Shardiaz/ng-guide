@@ -6,13 +6,13 @@ import {
   CollectionService,
   Rating,
   RatingService,
-} from '@slides/api';
+} from '@score/api';
 import {
   CardComponent,
   DetailTemplateDirective,
   ItemBrowserComponent,
   ItemTemplateDirective,
-} from '@slides/ui';
+} from '@score/ui';
 import { Observable, forkJoin, map, mergeMap, shareReplay } from 'rxjs';
 
 type TopList = { kpi: string; rating: string; value: number };

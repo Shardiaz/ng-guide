@@ -1,0 +1,6 @@
+<button *ngIf="canSave">Save</button>
+
+<ng-container *ngIf="canSave">
+	<button>Save</button>
+	<img src="{{saveState}}" />
+</ng-container>

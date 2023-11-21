@@ -2,40 +2,98 @@
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 	import Code from './Code.svelte';
 
-	type versions = 'ng16' | 'ng17';
+	type VersionMeta = { label: string; lines: LinesType; url: string };
+	type Versions = '16' | '17';
+	type LinesType = string | true | null;
+	type LinesInput = Record<Versions, LinesType> | LinesType;
 
-	const root: Record<versions, string> = {
-		ng16: 'ng-16-workshop',
-		ng17: 'ng-17-workshop'
+	const root: Record<Versions, string> = {
+		16: 'ng-16-workshop',
+		17: 'ng-17-workshop'
 	};
-
+	export let clipHighlight = false;
 	export let file: string;
 	export let animationId: string | null = null;
-	export let lines: Partial<Record<versions, string | true | null>> = {
-		ng16: true,
-		ng17: true
-	};
+	export let lines: LinesInput = true;
 	export let language: string | null = null;
 	export let range: [number, number] | null = null;
+	export let versioned = false;
 
 	$: filename = file.split(/[\\/]+/).pop();
-	$: ng16 = file.replace(/\\/g, '/').replace(root.ng17, root.ng16);
-	$: ng17 = file.replace(/\\/g, '/').replace(root.ng16, root.ng17);
+	$: versions = new Array<VersionMeta>(getVersion('16'), getVersion('17'));
+
 	let selectedIndex = 0;
+
+	function getVersion(version: Versions) {
+		return {
+			label: `v${version}`,
+			lines: getLines(version),
+			url: getUrl(version)
+		};
+	}
+
+	function getLines(version: Versions): LinesType {
+		return isVersioned(lines) ? lines[version] : lines;
+	}
+
+	function getUrl(version: Versions): string {
+		return file.replace(/\\/g, '/').replace(root[version], root[version]);
+	}
+
+	function isVersioned(input: LinesInput): input is Record<Versions, LinesType> {
+		console.log(typeof input, input);
+		return typeof input === 'object';
+	}
 </script>
 
-<div class="r-stretch">
+<div class="coderef r-stretch">
 	<div class="flex items-center justify-center gap-4">
 		<span class="badge variant-filled text-lg">{filename}</span>
-		<RadioGroup>
-			<RadioItem bind:group={selectedIndex} name="selectedIndex" value={0}>v16</RadioItem>
-			<RadioItem bind:group={selectedIndex} name="selectedIndex" value={1}>v17</RadioItem>
-		</RadioGroup>
+		{#if versioned}
+			<RadioGroup>
+				{#each versions as version, i}
+					<RadioItem bind:group={selectedIndex} name="selectedIndex" value={i}>
+						{version.label}
+					</RadioItem>
+				{/each}
+			</RadioGroup>
+		{/if}
 	</div>
-	<div class:hidden={selectedIndex === 1}>
-		<Code external={ng16} {animationId} lines={lines.ng16} {language} {range} />
-	</div>
-	<div class:hidden={selectedIndex !== 1}>
-		<Code external={ng17} {animationId} lines={lines.ng17} {language} {range} />
-	</div>
+
+	{#each versions as version, i}
+		{#if versioned || i === versions.length - 1}
+			<div
+				class="coderef-scroll"
+				class:highlight={clipHighlight}
+				class:hidden={versioned && selectedIndex !== i}
+			>
+				<Code external={version.url} {animationId} lines={version.lines} {language} {range} />
+			</div>
+		{/if}
+	{/each}
 </div>
+
+<style lang="scss" scoped>
+	.coderef {
+		display: grid;
+		grid-template-rows: auto 1fr;
+		gap: 0.5rem;
+
+		.coderef-scroll {
+			grid-row: 2;
+			overflow: auto;
+			margin-bottom: 4rem;
+			:global(pre) {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			:global(pre code) {
+				max-height: none;
+			}
+		}
+	}
+
+	.highlight {
+		--non-hightlight-display: none;
+	}
+</style>

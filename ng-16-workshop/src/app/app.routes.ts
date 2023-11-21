@@ -22,12 +22,12 @@ export const routes: Routes = [
     title: 'Collections',
     path: 'collections',
     loadChildren: () =>
-      import('@slides/collections').then((m) => m.CollectionRoutes),
+      import('@score/collections').then((m) => m.CollectionRoutes),
   },
   {
     title: 'Ratings',
     path: 'ratings',
-    loadChildren: () => import('@slides/ratings').then((m) => m.RatingRoutes),
+    loadChildren: () => import('@score/ratings').then((m) => m.RatingRoutes),
   },
   {
     path: '**',

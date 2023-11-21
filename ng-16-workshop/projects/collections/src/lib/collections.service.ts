@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CollectionService } from '@slides/api';
+import { CollectionService } from '@score/api';
 import { map } from 'rxjs';
 
 @Injectable({

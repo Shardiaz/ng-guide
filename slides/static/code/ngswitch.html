@@ -1,0 +1,5 @@
+<div [ngSwitch]="user.role">
+	<app-admin-profile *ngSwitchCase="'admin'"></app-admin-profile>
+	<app-user-profile *ngSwitchCase="'user'"></app-user-profile>
+	<app-guest-profile *ngSwitchDefault></app-guest-profile>
+</div>

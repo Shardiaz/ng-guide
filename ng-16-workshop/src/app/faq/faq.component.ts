@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'slides-faq',
+  selector: 'score-faq',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './faq.component.html',

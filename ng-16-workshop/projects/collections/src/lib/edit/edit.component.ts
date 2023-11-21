@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { Collection, CollectionService } from '@slides/api';
+import { Collection, CollectionService } from '@score/api';
 import { map, of, switchMap } from 'rxjs';
 import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
 

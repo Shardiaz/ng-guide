@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { RatingService } from '@slides/api';
-import { CardComponent } from '@slides/ui';
+import { RatingService } from '@score/api';
+import { CardComponent } from '@score/ui';
 import { Subject, filter, map, switchMap } from 'rxjs';
 
 @Component({

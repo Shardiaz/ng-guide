@@ -20,10 +20,10 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "@slides/ui": ["dist/ui"],
-      "@slides/api": ["dist/api"],
-      "@slides/collections": ["dist/collections"],
-      "@slides/ratings": ["dist/ratings"]
+      "@score/ui": ["dist/ui"],
+      "@score/api": ["dist/api"],
+      "@score/collections": ["dist/collections"],
+      "@score/ratings": ["dist/ratings"]
     },
     "lib": ["ES2022", "dom"]
   },

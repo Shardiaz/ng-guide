@@ -2,11 +2,11 @@
   <a *ngIf="!!appTitle" routerLink="/">
     <h1 class="title">{{ appTitle }}</h1>
   </a>
-  <slides-navigation
+  <score-navigation
     class="navigation"
     [items]="navigation"
     (itemSelected)="activate($event)"
-  ></slides-navigation>
+  ></score-navigation>
   <ui-theme-switch [themes]="availableThemes" class="theme"></ui-theme-switch>
   <ui-nav-bar class="nav-bar"></ui-nav-bar>
 </header>

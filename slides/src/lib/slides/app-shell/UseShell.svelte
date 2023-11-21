@@ -9,8 +9,5 @@
 <Slide>
 	<Hero><h2>{$t('shell.use.title')}</h2></Hero>
 	<Description>{$t('shell.use.description')}</Description>
-	<CodeReference
-		file="ng-17-workshop\src\app\app.component.ts"
-		lines={{ ng16: '8-9', ng17: '8-9' }}
-	/>
+	<CodeReference file="ng-17-workshop\src\app\app.component.ts" lines="8-9" />
 </Slide>
