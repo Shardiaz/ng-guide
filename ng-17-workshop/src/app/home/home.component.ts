@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { CardComponent } from '@score/ui';
 
 @Component({
   selector: 'score-home',
   standalone: true,
-  imports: [CommonModule, CardComponent, RouterModule],
+  imports: [CardComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

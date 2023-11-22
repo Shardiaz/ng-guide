@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
@@ -25,7 +25,7 @@ interface CollectionWithRatings extends Collection {
   selector: 'rate-dashboard',
   standalone: true,
   imports: [
-    CommonModule,
+    AsyncPipe,
     ItemBrowserComponent,
     ItemTemplateDirective,
     DetailTemplateDirective,

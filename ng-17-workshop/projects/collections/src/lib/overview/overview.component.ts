@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { CollectionService } from '@score/api';
 import { CardComponent } from '@score/ui';
 
 @Component({
   selector: 'col-overview',
   standalone: true,
-  imports: [CommonModule, CardComponent, RouterModule],
+  imports: [AsyncPipe, RouterLink, CardComponent],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.scss',
 })

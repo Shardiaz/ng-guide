@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Theme } from './theme.model';
 import { ThemePipe } from './themes.pipe';
@@ -8,7 +7,7 @@ const THEME_ATTRIBUTE = 'theme';
 @Component({
   selector: 'ui-theme-switch',
   standalone: true,
-  imports: [CommonModule, ThemePipe],
+  imports: [ThemePipe],
   templateUrl: './theme-switch.component.html',
   styleUrls: ['./theme-switch.component.scss'],
 })

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import {
   Component,
   ContentChild,
@@ -13,7 +13,7 @@ import { ItemTemplateDirective } from './item-template.directive';
 @Component({
   selector: 'ui-item-browser',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [NgTemplateOutlet, CardComponent],
   templateUrl: './item-browser.component.html',
   styleUrl: './item-browser.component.scss',
 })

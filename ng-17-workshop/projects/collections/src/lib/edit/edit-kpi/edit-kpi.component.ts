@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   ControlContainer,
@@ -12,7 +11,7 @@ import { KPI } from '@score/api';
 @Component({
   selector: 'col-edit-kpi',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './edit-kpi.component.html',
   styleUrl: './edit-kpi.component.scss',
 })

@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Collection, CollectionService } from '@score/api';
 import { map, of, switchMap } from 'rxjs';
 import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
@@ -13,7 +13,7 @@ import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
 @Component({
   selector: 'col-edit-model',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, EditKpiComponent],
+  imports: [NgIf, AsyncPipe, ReactiveFormsModule, EditKpiComponent],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.scss',
 })
