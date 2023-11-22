@@ -15,19 +15,15 @@
 <Slide>
 	<Hero><h3>{$t('nav.generate.html.title')}</h3></Hero>
 	<Description>{$t('nav.generate.html.description')}</Description>
-	<CodeReference
-		file="ng-16-workshop\src\app\navigation\navigation.component.html"
-		versioned
-		clipHighlight
-	/>
+	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.html" />
 </Slide>
 <Slide>
 	<Hero><h3>{$t('nav.generate.ts.title')}</h3></Hero>
 	<Description>{$t('nav.generate.ts.description')}</Description>
-	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.ts" clipHighlight />
+	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.ts" />
 </Slide>
 <Slide>
 	<Hero><h3>{$t('nav.generate.css.title')}</h3></Hero>
 	<Description>{$t('nav.generate.css.description')}</Description>
-	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.scss" clipHighlight />
+	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.scss" />
 </Slide>

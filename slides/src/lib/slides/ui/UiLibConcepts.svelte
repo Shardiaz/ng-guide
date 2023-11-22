@@ -30,3 +30,8 @@
 	<Description>{$t('ui.concepts.projects.description')}</Description>
 	<Code external="code/projects.elm" />
 </Slide>
+<Slide>
+	<Hero><h3>{$t('ui.concepts.pipes.title')}</h3></Hero>
+	<Description>{$t('ui.concepts.pipes.description')}</Description>
+	<Code external="code/pipes.html" />
+</Slide>

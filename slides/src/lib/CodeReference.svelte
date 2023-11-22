@@ -17,9 +17,9 @@
 	export let lines: LinesInput = true;
 	export let language: string | null = null;
 	export let range: [number, number] | null = null;
-	export let versioned = false;
-
+	export let classes: string | undefined = undefined;
 	$: filename = file.split(/[\\/]+/).pop();
+	$: versioned = /(.css|.scss)$/.test(file) == false;
 	$: versions = new Array<VersionMeta>(getVersion('16'), getVersion('17'));
 
 	let selectedIndex = 0;
@@ -48,7 +48,7 @@
 	}
 </script>
 
-<div class="coderef r-stretch">
+<div class="coderef r-stretch {classes}">
 	<div class="flex items-center justify-center gap-4">
 		<span class="badge variant-filled text-lg">{filename}</span>
 		{#if versioned}

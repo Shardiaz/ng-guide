@@ -1,0 +1,12 @@
+<!-- Property Binding -->
+<option [value]="optionValue"></option>
+<!-- Attribute Binding -->
+<input [attr.disabled]=" !user.canEdit "></option>
+<!-- Event Binding-->
+<input (change)="inputChanged($event)"></option>
+<button (click)="form.save(); form.reset(); $event.stopPropagation()"></option>
+<!--TwoWay Binding-->
+<app-color-picker [color]="favoriteColor" (colorChange)="favoriteColor = $event"></app-color-picker>
+<!-- abbreviation "BananBox" -->
+<app-color-picker [(color)]="favoriteColor"></app-color-picker>
+

@@ -23,7 +23,6 @@
 	<CodeReference
 		file="ng-17-workshop\src\app\shell\shell.component.html"
 		lines={{ 16: '1-4,12,13,15', 17: '1-6,14,15,17' }}
-		versioned
 		clipHighlight
 	/>
 </Slide>

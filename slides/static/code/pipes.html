@@ -1,0 +1,10 @@
+<!-- UpperCasePipe, LowerCasePipe => format strings -->
+<span>{{ option.rank | upper }}</span>
+<span>{{ option.hint | lower }}</span>
+<!-- DatePipe, CurrencyPipe, DecimalPipe, PercentPipe => formats based on locale -->
+<span>{{ order.date | date }} until {{ order.dueTo | date:"shortTime" }}</span>
+<span>{{ order.total | currency }}</span>
+<span>{{ order.discount | percent }}</span>
+<span>{{ order.rate | decimal }}</span>
+<!-- AsyncPipe => handles subscribe and unsubscribe  -->
+<img [src]=" profileImage$ | async " />

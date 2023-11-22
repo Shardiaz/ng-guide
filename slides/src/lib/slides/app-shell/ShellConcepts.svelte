@@ -1,6 +1,5 @@
 <script>
 	import Code from '$lib/Code.svelte';
-	import CodeReference from '$lib/CodeReference.svelte';
 	import Description from '$lib/Description.svelte';
 	import Hero from '$lib/Hero.svelte';
 	import Slide from '$lib/Slide.svelte';
@@ -14,30 +13,17 @@
 <Slide>
 	<Hero><h3>{$t('shell.concepts.template.title')}</h3></Hero>
 	<Description>{$t('shell.concepts.template.inerpolation')}</Description>
-	<CodeReference
-		language="html"
-		file="ng-16-workshop\src\app\app.component.ts"
-		lines="9"
-		clipHighlight
-	/>
+	<Code external="code/interpolation.html" />
 </Slide>
 <Slide>
 	<Hero><h3>{$t('shell.concepts.template.title')}</h3></Hero>
 	<Description>{$t('shell.concepts.template.bindings')}</Description>
-	<CodeReference
-		file="ng-17-workshop\src\app\shell\shell.component.html"
-		lines="9,10"
-		clipHighlight
-	/></Slide
->
+	<Code external="code/bindings.html" />
+</Slide>
 <Slide>
 	<Hero><h3>{$t('shell.concepts.template.title')}</h3></Hero>
 	<Description>{$t('shell.concepts.template.inputs')}</Description>
-	<CodeReference
-		file="ng-16-workshop\src\app\navigation\navigation.component.ts"
-		lines="17,18"
-		clipHighlight
-	/>
+	<Code external="code/input.ts" />
 </Slide>
 <Slide>
 	<Hero><h3>{$t('shell.concepts.directives.title')}</h3></Hero>

@@ -77,7 +77,7 @@
 				"title": "Template Syntax",
 				"inerpolation": "String interpolation as short hand for one way bindings",
 				"bindings": "Syncrhonisation of an input or output with an expression",
-				"inputs": "Discover Template Syntax and built-in Directives to create dynamic markup"
+				"inputs": "Define incoming dataflow with inputs"
 			}
 		}
 	},
@@ -142,6 +142,10 @@
 			"api": {
 				"title": "Library api",
 				"description": "To access code from the library it has to be exported in the entry file. By default Angular prepares a dedicated file where you can define all exports visible to consumers of the lib"
+			},
+			"pipes": {
+				"title": "Pipes",
+				"description": "Pipes transform values in templates"
 			}
 		},
 		"generate": {
@@ -171,6 +175,10 @@
 			"theme": {
 				"title": "Create a theme select component",
 				"description": "Component that allows switching themes",
+				"pipe": {
+					"title": "Custom Pipe ",
+					"description": "Define a pipe to transform values in bindings"
+				},
 				"html": {
 					"title": "Render buttons for each item",
 					"description": "Structural directive ngFor lets  us reuse markup for each element of the an collection. We can also use templateExpressions to raise the event directly from our markup"
@@ -198,7 +206,7 @@
 			}
 		},
 		"use": {
-			"title": "Use the new shell",
+			"title": "Use the lib's components",
 			"description": "Import components to use them in the template"
 		}
 	}

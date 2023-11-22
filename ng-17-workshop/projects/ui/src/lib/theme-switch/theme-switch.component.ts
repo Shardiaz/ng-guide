@@ -9,7 +9,7 @@ const THEME_ATTRIBUTE = 'theme';
   standalone: true,
   imports: [ThemePipe],
   templateUrl: './theme-switch.component.html',
-  styleUrls: ['./theme-switch.component.scss'],
+  styleUrl: './theme-switch.component.scss',
 })
 export class ThemeSwitchComponent {
   @Input() themes: Theme[] = [];

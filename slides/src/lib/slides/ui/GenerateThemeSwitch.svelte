@@ -18,7 +18,9 @@
 <Slide>
 	<Hero><h3>{$t('ui.generate.theme.html.title')}</h3></Hero>
 	<Description>{$t('ui.generate.theme.html.description')}</Description>
-	<CodeReference file="ng-17-workshop/projects/ui/src/lib/theme-switch/theme-switch.component.html" versioned />
+	<CodeReference
+		file="ng-17-workshop/projects/ui/src/lib/theme-switch/theme-switch.component.html"
+	/>
 </Slide>
 <Slide>
 	<Hero><h3>{$t('ui.generate.theme.ts.title')}</h3></Hero>

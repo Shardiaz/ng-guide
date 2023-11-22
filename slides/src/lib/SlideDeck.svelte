@@ -11,6 +11,7 @@
 	import Intro from './slides/intro/Intro.svelte';
 	import Navigation from './slides/navigation/Navigation.svelte';
 	import Environment from './slides/setup/Environment.svelte';
+	import Theme from './slides/theme/Theme.svelte';
 	import UiLibrary from './slides/ui/UiLibrary.svelte';
 
 	onMount(() => {
@@ -28,6 +29,7 @@
 		<Environment />
 		<AppShell />
 		<Navigation />
-		<UiLibrary/>
+		<UiLibrary />
+		<Theme />
 	</div>
 </div>
