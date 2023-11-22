@@ -7,7 +7,7 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('setup.create.title')}</h2></Hero>
+	<Hero><h3>{$t('setup.create.title')}</h3></Hero>
 	<Description>{$t('setup.create.description')}</Description>
 	<Code external="/code/workspace.elm" />
 </Slide>

@@ -8,12 +8,12 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('nav.generate.title')}</h2></Hero>
+	<Hero><h3>{$t('nav.generate.title')}</h3></Hero>
 	<Description>{$t('nav.generate.description')}</Description>
 	<Code external="code/generate-nav.elm" />
 </Slide>
 <Slide>
-	<Hero><h2>{$t('nav.generate.html.title')}</h2></Hero>
+	<Hero><h3>{$t('nav.generate.html.title')}</h3></Hero>
 	<Description>{$t('nav.generate.html.description')}</Description>
 	<CodeReference
 		file="ng-16-workshop\src\app\navigation\navigation.component.html"
@@ -22,12 +22,12 @@
 	/>
 </Slide>
 <Slide>
-	<Hero><h2>{$t('nav.generate.ts.title')}</h2></Hero>
+	<Hero><h3>{$t('nav.generate.ts.title')}</h3></Hero>
 	<Description>{$t('nav.generate.ts.description')}</Description>
 	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.ts" clipHighlight />
 </Slide>
 <Slide>
-	<Hero><h2>{$t('nav.generate.css.title')}</h2></Hero>
+	<Hero><h3>{$t('nav.generate.css.title')}</h3></Hero>
 	<Description>{$t('nav.generate.css.description')}</Description>
 	<CodeReference file="ng-16-workshop\src\app\navigation\navigation.component.scss" clipHighlight />
 </Slide>

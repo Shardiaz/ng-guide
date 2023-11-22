@@ -5,6 +5,7 @@
 	import { t } from '$lib/i18n';
 	import GenerateNavigation from './GenerateNavigation.svelte';
 	import NavigationConcepts from './NavigationConcepts.svelte';
+	import UseNavigation from './UseNavigation.svelte';
 </script>
 
 <Slide>
@@ -24,6 +25,7 @@
 	</Slide>
 	<NavigationConcepts />
 	<GenerateNavigation />
+	<UseNavigation/>
 </Slide>
 
 <style lang="scss" scoped>

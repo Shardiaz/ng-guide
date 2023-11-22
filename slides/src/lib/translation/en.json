@@ -86,7 +86,7 @@
 		"description": "Create link navigation and ouse angulars router api",
 		"concepts": {
 			"title": "Required Concepts",
-			"description": "Template items and raise an event on cl",
+			"description": "Use component events for inverse datra flow opposing to inputs and routing",
 			"events": {
 				"title": "Component Events",
 				"description": "Use events for data flow from component to parent",
@@ -94,11 +94,112 @@
 			},
 			"routes": {
 				"title": "Routing",
-				"description": "In SPA applications we use router frameworks to dynamicly change the content of the page",
+				"description": "In SPA applications we use router frameworks to dynamicly change the content of the page. In angular this is handled with @angular/router.",
 				"config": "Configure routes and redirects",
 				"outlet": "Use the RouterOutlet component to create a slot where the router can place the navigated component",
 				"lazy": "An advanced method is lazy loading routes that are initially unrequired to speed up page loading"
 			}
+		},
+		"generate": {
+			"title": "Generate component and targets",
+			"description": "Use the cli to genrate the navigation and some components we use as endpoints of routes",
+			"html": {
+				"title": "Render buttons for each item",
+				"description": "Structural directive ngFor lets  us reuse markup for each element of the an collection. We can also use templateExpressions to raise the event directly from our markup"
+			},
+			"ts": {
+				"title": "Input and Output",
+				"description": "Create an input to pass the items displayed in the navigation and an event to notify about the selection of an item"
+			},
+			"css": {
+				"title": "Flexbox",
+				"description": "Flexbox is a an implementation that allows responsive placement of elements"
+			}
+		},
+		"use": {
+			"title": "Use the new shell",
+			"description": "Import components to use them in the template"
+		}
+	},
+	"ui": {
+		"title": "Project type library",
+		"description": "Create a compopnent library domain independant reusable directives and helpers",
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "We use the library project type, public apis and path alias to integrate",
+			"library": {
+				"title": "ng generate library",
+				"description": "The library schematic creates a library and updates the angular.json with respective build and test targets"
+			},
+			"alias": {
+				"title": "Expose a custom import path",
+				"description": "Especially when working with multipla libraries it is often common to scope the imports in tsconfig"
+			},
+			"projects": {
+				"title": "Working with projects",
+				"description": "The cli can use the implicit and explicit project option to execute a task for a specific project instead of your app"
+			},
+			"api": {
+				"title": "Library api",
+				"description": "To access code from the library it has to be exported in the entry file. By default Angular prepares a dedicated file where you can define all exports visible to consumers of the lib"
+			}
+		},
+		"generate": {
+			"title": "Generate ui lib",
+			"description": "Generate the buidlable library",
+			"components": {
+				"title": "Add components",
+				"description": "Generate a couple of components in the lib",
+				"api": "Finally expose components to consumers of the lib"
+			},
+			"nav-bar": {
+				"title": "Create a navigation bar",
+				"description": "A generic breadcrumb component visualizing the nested route path",
+				"html": {
+					"title": "Navigation Links",
+					"description": "Use the routerLink directive to implicitly provide a href that works with angular router"
+				},
+				"ts": {
+					"title": "Router and activated route",
+					"description": "We can use ActivatedRoute to retrieve the current routing state and map items from there"
+				},
+				"css": {
+					"title": "Style binding",
+					"description": "With css variables we can easily use data from js in our style calculation"
+				}
+			},
+			"theme": {
+				"title": "Create a theme select component",
+				"description": "Component that allows switching themes",
+				"html": {
+					"title": "Render buttons for each item",
+					"description": "Structural directive ngFor lets  us reuse markup for each element of the an collection. We can also use templateExpressions to raise the event directly from our markup"
+				},
+				"ts": {
+					"title": "Router and activated route",
+					"description": "We can use ActivatedRoute to retrieve the current routing state and map items from there"
+				},
+				"css": {
+					"title": "Style binding",
+					"description": "With css variables we can easily use data from js in our style calculation"
+				}
+			},
+			"card": {
+				"title": "Create a card component",
+				"description": "Layout component to present content slots",
+				"html": {
+					"title": "Slot the content",
+					"description": "Use NgContent component to define slots for content injection"
+				},
+				"css": {
+					"title": "Css vars",
+					"description": "By using css vars we allow global color specs as well as local overrides"
+				}
+			}
+		},
+		"use": {
+			"title": "Use the new shell",
+			"description": "Import components to use them in the template"
 		}
 	}
 }

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, NgFor } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -6,7 +6,7 @@ import {
   Event,
   EventType,
   Router,
-  RouterModule,
+  RouterLink
 } from '@angular/router';
 import { Observable, Subject, filter, map, takeUntil } from 'rxjs';
 
@@ -18,7 +18,7 @@ type RouteData = {
 @Component({
   selector: 'ui-nav-bar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [NgFor, AsyncPipe, RouterLink],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
 })

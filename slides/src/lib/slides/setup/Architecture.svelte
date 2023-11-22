@@ -7,13 +7,13 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('setup.architecture.layout')}</h2></Hero>
+	<Hero><h3>{$t('setup.architecture.layout')}</h3></Hero>
 	<Description>{$t('setup.architecture.layout-description')}</Description>
 	<img class="r-stretch center r-frame" src="workspace.png" alt="Screenshot of the workshop app" />
 </Slide>
 
 <Slide>
-	<Hero><h2>{$t('setup.architecture.execute')}</h2></Hero>
+	<Hero><h3>{$t('setup.architecture.execute')}</h3></Hero>
 	<Description>{$t('setup.architecture.execute-description')}</Description>
 	<Code external="code/run.elm" />
 </Slide>

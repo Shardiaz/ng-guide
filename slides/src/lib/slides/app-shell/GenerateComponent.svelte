@@ -8,7 +8,7 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('shell.generate.title')}</h2></Hero>
+	<Hero><h3>{$t('shell.generate.title')}</h3></Hero>
 	<Description>{$t('shell.generate.description')}</Description>
 	<Code language="elm">ng generate component shell --standalone</Code>
 	<img
@@ -18,7 +18,7 @@
 	/>
 </Slide>
 <Slide>
-	<Hero><h2>{$t('shell.generate.html.title')}</h2></Hero>
+	<Hero><h3>{$t('shell.generate.html.title')}</h3></Hero>
 	<Description>{$t('shell.generate.html.description')}</Description>
 	<CodeReference
 		file="ng-17-workshop\src\app\shell\shell.component.html"
@@ -28,7 +28,7 @@
 	/>
 </Slide>
 <Slide>
-	<Hero><h2>{$t('shell.generate.ts.title')}</h2></Hero>
+	<Hero><h3>{$t('shell.generate.ts.title')}</h3></Hero>
 	<Description>{$t('shell.generate.ts.description')}</Description>
 	<CodeReference
 		file="ng-17-workshop\src\app\shell\shell.component.ts"
@@ -37,7 +37,7 @@
 	/>
 </Slide>
 <Slide>
-	<Hero><h2>{$t('shell.generate.css.title')}</h2></Hero>
+	<Hero><h3>{$t('shell.generate.css.title')}</h3></Hero>
 	<Description>{$t('shell.generate.css.description')}</Description>
 	<CodeReference
 		file="ng-17-workshop\src\app\shell\shell.component.scss"

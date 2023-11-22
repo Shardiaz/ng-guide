@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@myOrg/ui": [
+                "./dist/ui"
+            ],
+            "@myOrg/domainOne": [
+                "./projects/domain-one/src/public-api.ts"
+            ]
+        }
+    }
+}

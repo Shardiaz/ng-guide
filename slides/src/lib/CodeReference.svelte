@@ -37,7 +37,10 @@
 	}
 
 	function getUrl(version: Versions): string {
-		return file.replace(/\\/g, '/').replace(root[version], root[version]);
+		return file
+			.replace(/\\/g, '/')
+			.replace(root[16], root[version])
+			.replace(root[17], root[version]);
 	}
 
 	function isVersioned(input: LinesInput): input is Record<Versions, LinesType> {

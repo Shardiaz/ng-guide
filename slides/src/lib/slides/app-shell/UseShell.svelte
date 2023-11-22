@@ -7,7 +7,7 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('shell.use.title')}</h2></Hero>
+	<Hero><h3>{$t('shell.use.title')}</h3></Hero>
 	<Description>{$t('shell.use.description')}</Description>
 	<CodeReference file="ng-17-workshop\src\app\app.component.ts" lines="8-9" />
 </Slide>

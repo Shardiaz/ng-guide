@@ -1,0 +1,1 @@
+ng g libarary myLib --prefix=my --standalone

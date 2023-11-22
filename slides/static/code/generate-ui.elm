@@ -1,0 +1,1 @@
+ng g library ui --prefix=ui --standalone

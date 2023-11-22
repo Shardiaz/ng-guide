@@ -11,6 +11,7 @@
 	import Intro from './slides/intro/Intro.svelte';
 	import Navigation from './slides/navigation/Navigation.svelte';
 	import Environment from './slides/setup/Environment.svelte';
+	import UiLibrary from './slides/ui/UiLibrary.svelte';
 
 	onMount(() => {
 		Reveal.initialize({
@@ -27,5 +28,6 @@
 		<Environment />
 		<AppShell />
 		<Navigation />
+		<UiLibrary/>
 	</div>
 </div>

@@ -6,7 +6,7 @@
 </script>
 
 <Slide>
-	<Hero><h2>{$t('intro.overview.title')}</h2></Hero>
+	<Hero><h3>{$t('intro.overview.title')}</h3></Hero>
 	<Description>{$t('intro.overview.description')}</Description>
 	<img
 		class="r-stretch center r-frame"
