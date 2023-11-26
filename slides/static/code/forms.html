@@ -1,0 +1,9 @@
+<form #myForm (ngSubmit)="save(myForm)">
+	<input name="name" required />
+	<input name="password" required minlength="8" />
+</form>
+
+<form [formGroup]="form">
+	<input formControlName="name" />
+	<input formControlName="password" />
+</form>

@@ -22,7 +22,7 @@
 	$: versioned = /(.css|.scss)$/.test(file) == false;
 	$: versions = new Array<VersionMeta>(getVersion('16'), getVersion('17'));
 
-	let selectedIndex = 0;
+	let selectedIndex = 1;
 
 	function getVersion(version: Versions) {
 		return {

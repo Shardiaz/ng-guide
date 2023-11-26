@@ -117,8 +117,9 @@
 			}
 		},
 		"use": {
-			"title": "Use the new shell",
-			"description": "Import components to use them in the template"
+			"title": "Extend the shell",
+			"description": "Add the navigation to the header",
+			"routes": "Add the routes to config"
 		}
 	},
 	"ui": {
@@ -149,7 +150,7 @@
 			}
 		},
 		"generate": {
-			"title": "Generate ui lib",
+			"title": "Create ui lib",
 			"description": "Generate the buidlable library",
 			"components": {
 				"title": "Add components",
@@ -208,6 +209,104 @@
 		"use": {
 			"title": "Use the lib's components",
 			"description": "Import components to use them in the template"
+		}
+	},
+	"theme": {
+		"title": "Css theming",
+		"description": "Create a theme for your application",
+		"concept": {
+			"title": "Required Concepts",
+			"description": "Witch css variables and scoped overrides enable customied theming"
+		},
+		"elements": "Styles for default elements",
+		"colors": "Create a color palette",
+		"font": "Setup fontfaces",
+		"compilation": "Compose the Theme",
+		"utils": "Util classes",
+		"import": "import theme and utils"
+	},
+	"collections": {
+		"title": "App feature",
+		"description": "Compose the app with self contained features",
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "Use component events for inverse datra flow opposing to inputs and routing",
+			"routes": {
+				"title": "Export routes",
+				"description": "Export the features routes as entry point"
+			},
+			"http": {
+				"title": "HttpClient",
+				"description": "Http client wraps fetch in a typed observable resposne",
+				"interceptors": "HttpInterceptors will be called for every request initiated with an HttpClient"
+			},
+			"forms": {
+				"title": "Richer Forms",
+				"description": "Forms and ReactiveForms provide richer functionallity to handle complex forms",
+				"markup": "Create forms with forms directives",
+				"builder": "Create reactive forms With the frombuilder"
+			}
+		},
+		"generate": {
+			"title": "Create collections feature",
+			"description": "Api lib providing models and services",
+			"service": {
+				"title": "Collections service",
+				"description": "Local service to help resolving route titles"
+			},
+			"routes": {
+				"title": "Export child routes",
+				"description": "Use a redirect to define the default route and the local service to resolve the route parameter"
+			},
+			"edit": {
+				"html": {
+					"title": "Reactive form",
+					"description": "Use reactive forms to design complex form data"
+				},
+				"ts": {
+					"title": "Formbuilder",
+					"description": "Use the router and formbuilder to create a formGroup based on the model"
+				}
+			},
+			"overview": {
+				"html": {
+					"title": "Async pipe",
+					"description": "With the async pipe we can itterate over an observable"
+				},
+				"ts": {
+					"title": "Observable",
+					"description": "Create an observable returning all collections"
+				},
+				"css": {
+					"title": "flex-wrap",
+					"description": "Layout the items with flex wrap for responsive placement"
+				}
+			},
+			"api": {
+				"title": "Create api lib",
+				"description": "Api lib providing models and services",
+				"models": {
+					"title": "Api contracts",
+					"description": "Define api models"
+				},
+				"services": {
+					"title": "Create services",
+					"base": "Utilize a base service with common REST implementation",
+					"collection": "Implement the collection service"
+				},
+				"mock": {
+					"title": "HttpMockInterceptor",
+					"description": "Interceptor to mock backend while developing"
+				},
+				"export": {
+					"title": "Public api",
+					"description": "Export models, services and interceptors"
+				}
+			}
+		},
+		"use": {
+			"title": "Add child routes",
+			"description": "Lazy load the feature route"
 		}
 	}
 }

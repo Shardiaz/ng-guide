@@ -18,7 +18,7 @@
 	<Hero><h3>{$t('ui.use.title')}</h3></Hero>
 	<CodeReference
 		file="ng-17-workshop\src\app\shell\shell.component.ts"
-		lines={{ 16: '41-45', 17: '39,43' }}
+		lines={{ 16: '41-45', 17: '39-43' }}
 	/>
 </Slide>
 <Slide>
