@@ -1,5 +1,8 @@
 {
 	"title": "Guide to angular",
+	"loading": "...preparing slides...",
+	"start": "Start presentation",
+	"features": "Common 3rd party options",
 	"intro": {
 		"speaker": {
 			"host": "Im your host"

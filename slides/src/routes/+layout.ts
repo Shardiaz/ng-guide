@@ -1,6 +1,7 @@
-export const ssr = false;
-import { loadTranslations, locales } from '$lib/i18n';
 import './styles.scss';
+export const ssr = false;
+
+import { loadTranslations, locales } from '$lib/i18n';
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load = async () => {
