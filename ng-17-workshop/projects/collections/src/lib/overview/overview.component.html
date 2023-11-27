@@ -1,16 +1,24 @@
-<button routerLink="../-">add</button>
+<button mat-button routerLink="../-">add</button>
 <div class="list">
   @for (collection of collections$ | async;track collection.id) {
-  <ui-card routerLink="../{{ collection.id }}">
-    <span cardHeader>{{ collection.name }}</span>
-    <span>{{ collection.description }}</span>
-    <div class="badges" cardFooter>
-      @for (kpi of collection.kpis; track $index) {
-      <span class="badge" cardFooter>
-        {{ kpi.name }}
-      </span>
-      }
-    </div>
-  </ui-card>
+  <mat-card routerLink="../{{ collection.id }}">
+    <mat-card-header>
+      <mat-card-title>
+        {{ collection.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <span>{{ collection.description }}</span>
+    </mat-card-content>
+    <mat-card-footer>
+      <div class="badges" cardFooter>
+        @for (kpi of collection.kpis; track $index) {
+        <span class="badge" cardFooter>
+          {{ kpi.name }}
+        </span>
+        }
+      </div>
+    </mat-card-footer>
+  </mat-card>
   }
 </div>

@@ -5,15 +5,26 @@ import {
   FormBuilder,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Collection, CollectionService } from '@score/api';
 import { map, of, switchMap } from 'rxjs';
 import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
-
 @Component({
   selector: 'col-edit-model',
   standalone: true,
-  imports: [NgIf, AsyncPipe, ReactiveFormsModule, EditKpiComponent, RouterLink],
+  imports: [
+    NgIf,
+    AsyncPipe,
+    ReactiveFormsModule,
+    EditKpiComponent,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    RouterLink,
+  ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.scss',
 })

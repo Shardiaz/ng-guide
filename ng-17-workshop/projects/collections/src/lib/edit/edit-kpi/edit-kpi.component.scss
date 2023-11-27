@@ -7,4 +7,10 @@
 .kpis {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
 }

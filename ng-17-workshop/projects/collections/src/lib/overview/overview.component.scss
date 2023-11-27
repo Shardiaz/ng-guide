@@ -11,21 +11,18 @@ button {
 .list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   padding: 0.5rem;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
   list-style-type: none;
-  background: var(--bg-color);
 
-  li {
+  mat-card {
     cursor: pointer;
-    padding: 0.25rem 1rem;
-    border-radius: var(--border-radius);
-
     &:hover {
-      background-color: var(--dark-color);
-      color: var(--light-color);
+      transform: scale(1.1);
     }
+  }
+
+  mat-card-content {
+    padding: 1rem;
   }
 }

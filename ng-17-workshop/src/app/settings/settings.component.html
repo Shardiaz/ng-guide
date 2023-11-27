@@ -1,1 +1,38 @@
-<p>settings works!</p>
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Current Password</mat-label>
+    <input matInput formControlName="current" type="password" />
+
+    @if (form.hasError('checkPassword','current')) {
+    <mat-error>Current password is invalid</mat-error>
+    }
+  </mat-form-field>
+  <div formGroupName="newPassword">
+    <mat-form-field>
+      <mat-label>New Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+
+      @if(form.hasError('minlength','newPassword.password')) {
+      <mat-error>Minimum length is 4</mat-error>
+      } @else if (form.hasError('maxlength','newPassword.password')) {
+      <mat-error>Maximum length is 16</mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Confirm new password</mat-label>
+      <input matInput formControlName="confirm" type="password" />
+
+      @if(form.hasError('minlength','newPassword.confirm')) {
+      <mat-error>Minimum length is 4</mat-error>
+      } @else if (form.hasError('maxlength','newPassword.confirm')) {
+      <mat-error>Maximum length is 16</mat-error>
+      }
+    </mat-form-field>
+    @if (form.hasError('matchPassword','newPassword')) {
+    <mat-error>Please enter the same password to confirm</mat-error>
+    }
+  </div>
+  <mat-slider>
+    <input matSliderThumb formControlName="rate" />
+  </mat-slider>
+</form>
