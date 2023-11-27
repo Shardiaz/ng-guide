@@ -252,7 +252,7 @@
 		},
 		"generate": {
 			"title": "Create collections feature",
-			"description": "Api lib providing models and services",
+			"description": "Library implementing the feature",
 			"service": {
 				"title": "Collections service",
 				"description": "Local service to help resolving route titles"
@@ -304,6 +304,103 @@
 				"export": {
 					"title": "Public api",
 					"description": "Export models, services and interceptors"
+				}
+			}
+		},
+		"use": {
+			"title": "Add child routes",
+			"description": "Lazy load the feature route"
+		}
+	},
+	"ratings": {
+		"title": "Additional feature",
+		"description": "Feature exploring itemscontrols and complex routing with guards",
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "Use custom directives and queries to enable typed templates in generic controls while protecting access with guards",
+			"guards": {
+				"title": "Route guards",
+				"description": "Route guards can be used to limit access as well as loading data",
+				"usage": "Guards will be used in route configuration"
+			},
+			"queries": {
+				"title": "View and Content queries",
+				"description": "With view and content queries we can access template and content children",
+				"options": "Adjust how and what references will be stored"
+			},
+			"directives": {
+				"title": "Custom directives",
+				"description": "Custom directives provide similar functionality to components but do not provide template or styling"
+			}
+		},
+		"generate": {
+			"title": "Create ratings feature",
+			"description": "Create a similar library to collections",
+			"service": {
+				"title": "Ratings service",
+				"description": "Local service providing trasnformations between form and model"
+			},
+			"routes": {
+				"title": "Nested child routes",
+				"description": "We nest routes to create the breadcrumb structure"
+			},
+			"browser": {
+				"title": "Itemscontrol",
+				"description": "Create an itemscontrol component",
+				"directive": {
+					"title": "Attribute directives",
+					"description": "Use ngTemplateContextGuard to create type support within the template"
+				},
+				"html": {
+					"title": "Template Outlet",
+					"description": "The template outlet directive allows assigning templates and their context to slots"
+				},
+				"ts": {
+					"title": "ContenChild",
+					"description": "Create an observable returning all collections"
+				},
+				"css": {
+					"title": "Layout items"
+				}
+			},
+			"dashboard": {
+				"html": {
+					"title": "Item Browser",
+					"description": "Define templates using the new ItemBowserComponet"
+				},
+				"ts": {
+					"title": "Compose observables",
+					"description": "Compose a list consisting of collections and respective ratings"
+				},
+				"css": {
+					"title": "Style the templates"
+				}
+			},
+			"edit": {
+				"html": {
+					"title": "Generic template",
+					"description": "Genericly create inputs for each formArray entry"
+				},
+				"ts": {
+					"title": "Form",
+					"description": "Create the form and collection mapping to the route"
+				},
+				"css": {
+					"title": "Layout items"
+				}
+			},
+			"ratings": {
+				"html": {
+					"title": "Async pipe",
+					"description": "With the async pipe we can itterate over an observable"
+				},
+				"ts": {
+					"title": "Observable",
+					"description": "Create an observable returning all collections"
+				},
+				"css": {
+					"title": "flex-wrap",
+					"description": "Layout the items with flex wrap for responsive placement"
 				}
 			}
 		},

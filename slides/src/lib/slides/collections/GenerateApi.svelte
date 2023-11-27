@@ -10,7 +10,7 @@
 <Slide>
 	<Hero><h3>{$t('collections.generate.api.title')}</h3></Hero>
 	<Description>{$t('collections.generate.api.description')}</Description>
-	<Code external="code/api.elm" />
+	<Code external="code/generate-api.elm" />
 </Slide>
 <Slide>
 	<Hero><h3>{$t('collections.generate.api.models.title')}</h3></Hero>

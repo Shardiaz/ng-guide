@@ -13,6 +13,7 @@
 	import Material from '$lib/slides/material/Material.svelte';
 	import Navigation from '$lib/slides/navigation/Navigation.svelte';
 	import NgRx from '$lib/slides/ngrx/NgRx.svelte';
+	import Ratings from '$lib/slides/ratings/Ratings.svelte';
 	import Environment from '$lib/slides/setup/Environment.svelte';
 	import Theme from '$lib/slides/theme/Theme.svelte';
 	import UiLibrary from '$lib/slides/ui/UiLibrary.svelte';
@@ -40,10 +41,11 @@
 		<Navigation />
 		<UiLibrary />
 		<Theme />
-		<Collections />
 		{#if $material}
 			<Material />
 		{/if}
+		<Collections />
+		<Ratings />
 		{#if $ngrx}
 			<NgRx />
 		{/if}
