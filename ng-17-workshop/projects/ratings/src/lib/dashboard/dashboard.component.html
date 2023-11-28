@@ -11,13 +11,18 @@
     <div class="top-lists">
       <h1>{{ collection.name }}</h1>
       @for (topList of collection.topLists; track $index) {
-      <ui-card>
-        <h2 cardHeader>{{ topList.kpi }}</h2>
-        <div class="top-list">
-          <strong>{{ topList.rating }}</strong>
-          <span badge primary>{{ topList.value }}</span>
-        </div>
-      </ui-card>
+      <mat-card matBadge="{{ topList.value }}">
+        <mat-card-header>
+          <mat-card-title>
+            {{ topList.kpi }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ topList.rating }}
+          </p>
+        </mat-card-content>
+      </mat-card>
       }
     </div>
   </ng-template>

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 export type NavigationItem = {
   key: string;
@@ -8,6 +9,7 @@ export type NavigationItem = {
 @Component({
   selector: 'score-navigation',
   standalone: true,
+  imports: [MatButtonModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
 })

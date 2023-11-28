@@ -1,5 +1,8 @@
 import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   Collection,
@@ -8,13 +11,11 @@ import {
   RatingService,
 } from '@score/api';
 import {
-  CardComponent,
   DetailTemplateDirective,
   ItemBrowserComponent,
   ItemTemplateDirective,
 } from '@score/ui';
 import { Observable, forkJoin, map, mergeMap, shareReplay } from 'rxjs';
-
 type TopList = { kpi: string; rating: string; value: number };
 interface CollectionWithRatings extends Collection {
   ratings: Rating[];
@@ -29,7 +30,9 @@ interface CollectionWithRatings extends Collection {
     ItemBrowserComponent,
     ItemTemplateDirective,
     DetailTemplateDirective,
-    CardComponent,
+    MatButtonModule,
+    MatCardModule,
+    MatBadgeModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

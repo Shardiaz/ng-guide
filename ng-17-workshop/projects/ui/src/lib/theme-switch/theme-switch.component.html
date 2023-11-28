@@ -1,10 +1,13 @@
-<select #select (change)="selectTheme(select.value)">
-  @for (theme of themes; track $index) {
-  <option
-    [value]="theme | theme : 'key'"
-    [selected]="(theme | theme : 'key') === currentTheme"
+<mat-form-field appearance="outline">
+  <mat-label>Theme</mat-label>
+  <mat-select
+    (selectionChange)="selectTheme($event.value)"
+    [value]="currentTheme"
   >
-    {{ theme | theme : "name" }}
-  </option>
-  }
-</select>
+    @for (theme of themes; track $index) {
+    <mat-option [value]="theme | theme : 'key'">
+      {{ theme | theme : "name" }}
+    </mat-option>
+    }
+  </mat-select>
+</mat-form-field>

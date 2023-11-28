@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { Theme } from './theme.model';
 import { ThemePipe } from './themes.pipe';
 
@@ -7,7 +9,7 @@ export const THEME_ATTRIBUTE = 'theme';
 @Component({
   selector: 'ui-theme-switch',
   standalone: true,
-  imports: [ThemePipe],
+  imports: [ThemePipe, MatSelectModule, MatFormFieldModule],
   templateUrl: './theme-switch.component.html',
   styleUrl: './theme-switch.component.scss',
 })

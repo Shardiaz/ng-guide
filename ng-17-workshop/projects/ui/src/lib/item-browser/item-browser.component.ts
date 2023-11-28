@@ -6,14 +6,14 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { CardComponent } from '../card/card.component';
+import { MatButtonModule } from '@angular/material/button';
 import { DetailTemplateDirective } from './detail-template.directive';
 import { ItemTemplateDirective } from './item-template.directive';
 
 @Component({
   selector: 'ui-item-browser',
   standalone: true,
-  imports: [NgTemplateOutlet, CardComponent],
+  imports: [NgTemplateOutlet, MatButtonModule],
   templateUrl: './item-browser.component.html',
   styleUrl: './item-browser.component.scss',
 })

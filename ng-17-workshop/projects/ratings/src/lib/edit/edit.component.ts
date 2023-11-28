@@ -1,6 +1,9 @@
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CollectionService, RatingService } from '@score/api';
 import { map, switchMap } from 'rxjs';
@@ -9,7 +12,15 @@ import { RatingsService } from '../ratings.service';
 @Component({
   selector: 'rate-edit',
   standalone: true,
-  imports: [AsyncPipe, NgIf, RouterLink, ReactiveFormsModule],
+  imports: [
+    AsyncPipe,
+    NgIf,
+    RouterLink,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.scss',
 })

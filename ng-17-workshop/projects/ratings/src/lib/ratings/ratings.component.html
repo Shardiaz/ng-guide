@@ -1,12 +1,24 @@
-<button routerLink="./-">Add Rating</button>
-@for (rating of ratings$| async; track rating.id) {
-<ui-card routerLink="./{{ rating.id }}">
-  <span cardHeader>{{ rating.name }}</span>
-  {{ rating.description }}
-  @for (value of rating.values; track $index) {
-  <span badge cardFooter>
-    <strong>{{ value.name }}</strong> {{ value.value }}
-  </span>
-  }
-</ui-card>
-}
+<button mat-stroked-button routerLink="./-">Add Rating</button>
+<table mat-table [dataSource]="ratings$">
+  <mat-text-column name="name" headerText="Name"></mat-text-column>
+  <mat-text-column
+    name="description"
+    headerText="Description"
+  ></mat-text-column>
+  <ng-container matColumnDef="values">
+    <th mat-header-cell *matHeaderCellDef>Values</th>
+    <td mat-cell *matCellDef="let rating">
+      <mat-chip-listbox>
+        @for (value of rating.values; track $index) {
+        <mat-chip> {{ value.name }} {{ value.value }} </mat-chip>
+        }
+      </mat-chip-listbox>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    routerLink="./{{ row.id }}"
+  ></tr>
+</table>

@@ -18,6 +18,7 @@ import { EditKpiComponent } from './edit-kpi/edit-kpi.component';
   imports: [
     NgIf,
     AsyncPipe,
+    RouterLink,
     ReactiveFormsModule,
     EditKpiComponent,
     MatButtonModule,

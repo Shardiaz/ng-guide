@@ -15,7 +15,9 @@
 </div>
 @if(detailTemplate && !!selected){
 <div class="item-details">
-  <button primary (click)="editItem.emit(selected)">view</button>
+  <button mat-stroked-button primary (click)="editItem.emit(selected)">
+    view
+  </button>
   <ng-container
     *ngTemplateOutlet="
       detailTemplate.template;

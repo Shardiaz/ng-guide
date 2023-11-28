@@ -1,4 +1,4 @@
-<button mat-button routerLink="../-">add</button>
+<button mat-stroked-button routerLink="../-">add</button>
 <div class="list">
   @for (collection of collections$ | async;track collection.id) {
   <mat-card routerLink="../{{ collection.id }}">
