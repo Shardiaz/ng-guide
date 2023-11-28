@@ -5,6 +5,8 @@
 	import Hero from '$lib/Hero.svelte';
 	import Slide from '$lib/Slide.svelte';
 	import { t } from '$lib/i18n';
+
+	const branch = 'feature/material';
 </script>
 
 <Slide>
@@ -15,10 +17,10 @@
 <Slide>
 	<Hero><h3>{$t('material.generate.palette.title')}</h3></Hero>
 	<Description>{$t('material.generate.palette.description')}</Description>
-	<CodeReference file="ng-17-workshop\src\style\colors\pallettes.scss" />
+	<CodeReference {branch} file="ng-17-workshop\src\style\colors\pallettes.scss" />
 </Slide>
 <Slide>
 	<Hero><h3>{$t('material.generate.theme.title')}</h3></Hero>
 	<Description>{$t('material.generate.theme.description')}</Description>
-	<CodeReference file="ng-17-workshop\src\style\material.scss" />
+	<CodeReference {branch} file="ng-17-workshop\src\style\material.scss" />
 </Slide>

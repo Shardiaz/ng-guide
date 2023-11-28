@@ -9,6 +9,6 @@
 	<Slide>
 		<Hero><h2>{$t('ngrx.title')}</h2></Hero>
 		<Description>{$t('ngrx.description')}</Description>
-		<img class="center" src="/ngrx" alt="NgRx logo" />
+		<img class="center r-stretch" src="/ngrx.svg" alt="NgRx logo" />
 	</Slide>
 </Slide>

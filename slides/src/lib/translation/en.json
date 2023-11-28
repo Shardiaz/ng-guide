@@ -428,5 +428,9 @@
 			"title": "Apply material",
 			"description": "Finally import the material theme"
 		}
+	},
+	"ngrx": {
+		"title": "NgRx",
+		"description": "StateManagement inspired by Redux"
 	}
 }

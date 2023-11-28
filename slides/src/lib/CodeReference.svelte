@@ -19,6 +19,7 @@
 	export let language: string | null = null;
 	export let range: [number, number] | null = null;
 	export let classes: string | undefined = undefined;
+	export let branch: string | undefined = undefined;
 	$: filename = file.split(/[\\/]+/).pop();
 	$: versioned = /(.css|.scss)$/.test(file) == false;
 	$: versions = new Array<VersionMeta>(getVersion('16'), getVersion('17'));
@@ -76,7 +77,7 @@
 					lines={version.lines}
 					{language}
 					{range}
-					branch={$material ? 'feature/material' : 'main'}
+					ref={branch ?? $material ? 'feature/material' : 'main'}
 				/>
 			</div>
 		{/if}

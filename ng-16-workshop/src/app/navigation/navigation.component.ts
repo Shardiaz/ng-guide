@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export type NavigationItem = {
@@ -8,6 +9,7 @@ export type NavigationItem = {
 @Component({
   selector: 'score-navigation',
   standalone: true,
+  imports: [NgFor],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
 })
