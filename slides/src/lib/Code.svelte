@@ -6,6 +6,7 @@
 	export let language: string | null = null;
 	export let external: string | null = null;
 	export let range: [number, number] | null = null;
+	export let branch: string | null = null;
 </script>
 
 <pre data-id={animationId || undefined}>
@@ -17,7 +18,8 @@
 		data-trim
 		data-line-numbers={lines || undefined}
 		data-ln-start-from={range?.[0]}
-		data-noescape>
+		data-noescape
+		data-ref={branch}>
 		<slot />
 	</code>
 </pre>

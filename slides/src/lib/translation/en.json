@@ -408,5 +408,25 @@
 			"title": "Add child routes",
 			"description": "Lazy load the feature route"
 		}
+	},
+	"material": {
+		"title": "Material Design",
+		"description": "Use angular material implementation",
+		"generate": {
+			"title": "Ng add",
+			"description": "Use ng add to setup your application",
+			"palette": {
+				"title": "Colors",
+				"description": "Define custom Material palettes"
+			},
+			"theme": {
+				"title": "Material Theme",
+				"description": "Setup the theme and conditions for custom color sets"
+			}
+		},
+		"use": {
+			"title": "Apply material",
+			"description": "Finally import the material theme"
+		}
 	}
 }

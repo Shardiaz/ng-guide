@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
 	import Code from './Code.svelte';
+	import { material } from './stores/features.store';
 
 	type VersionMeta = { label: string; lines: LinesType; url: string };
 	type Versions = '16' | '17';
@@ -69,7 +70,14 @@
 				class:highlight={clipHighlight}
 				class:hidden={versioned && selectedIndex !== i}
 			>
-				<Code external={version.url} {animationId} lines={version.lines} {language} {range} />
+				<Code
+					external={version.url}
+					{animationId}
+					lines={version.lines}
+					{language}
+					{range}
+					branch={$material ? 'feature/material' : 'main'}
+				/>
 			</div>
 		{/if}
 	{/each}
