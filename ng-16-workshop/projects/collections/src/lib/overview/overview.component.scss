@@ -29,3 +29,37 @@ button {
     }
   }
 }
+
+.loading {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  animation: intermediate 4s infinite ease;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--special-bg-color) 10%,
+    var(--special-bg-color) 90%,
+    transparent
+  );
+  background-size: 10%;
+  background-repeat: no-repeat;
+
+  .indicator {
+    display: none;
+    width: 10%;
+    height: 100%;
+    background: var(--special-bg-color);
+  }
+}
+
+@keyframes intermediate {
+  from {
+    background-position-x: -10%;
+  }
+  to {
+    background-position-x: 110%;
+  }
+}

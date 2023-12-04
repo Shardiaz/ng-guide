@@ -11,5 +11,14 @@
         {{ kpi.name }}
       </span>
     </div>
+    <button
+      cardFooter
+      (click)="$event.stopPropagation(); delete(collection.id)"
+    >
+      Delete
+    </button>
   </ui-card>
+</div>
+<div class="loading" *ngIf="isLoading$ | async">
+  <div class="indicator"></div>
 </div>
