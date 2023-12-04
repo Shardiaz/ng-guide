@@ -431,6 +431,55 @@
 	},
 	"ngrx": {
 		"title": "NgRx",
-		"description": "StateManagement inspired by Redux"
+		"description": "StateManagement inspired by Redux",
+		"generate": {
+			"title": "Create collections feature store",
+			"description": "Feature store to handle all collections interactions and state",
+			"actions": {
+				"title": "Api interactions",
+				"description": "Define actions for all possible api interactions"
+			},
+			"effects": {
+				"title": "Effects",
+				"description": "Create effects to execute async api calls on action dispatch"
+			},
+			"feature": {
+				"title": "Feature",
+				"description": "Features wrap action, events and reducers for a subset of the store"
+			}
+		},
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "Create store pattern with actions, effects and reducer",
+			"redux-link": "Should I use redux",
+			"actions": {
+				"title": "Actions",
+				"description": "Define typed actions that can be handled by the store"
+			},
+			"selectors": {
+				"title": "Selectors",
+				"description": "Define custom selectors to create reusable acess to subsets of the store or computed values"
+			},
+			"effects": {
+				"title": "Effects",
+				"description": "Define effects to take react on actions dispatched in the store"
+			},
+			"reducer": {
+				"title": "Reducer",
+				"description": "Single point of mutating the store state"
+			},
+			"feature": {
+				"title": "Features",
+				"description": "Use features to seperate subsets of the store with independant implementations"
+			},
+			"dev": {
+				"title": "Dev Tools",
+				"description": "Leverage the redux pattern with extended redux DevTools"
+			}
+		},
+		"use": {
+			"title": "Provide reducer and effects",
+			"description": "Provide features on route level and root state in app.config"
+		}
 	}
 }

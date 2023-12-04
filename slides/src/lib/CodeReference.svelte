@@ -77,7 +77,7 @@
 					lines={version.lines}
 					{language}
 					{range}
-					ref={branch ?? $material ? 'feature/material' : 'main'}
+					ref={branch ?? ($material ? 'feature/material' : 'main')}
 				/>
 			</div>
 		{/if}
