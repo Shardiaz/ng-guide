@@ -90,8 +90,11 @@ function pushStorage(collection: string, body: Entity, id?: string) {
     return ok(body);
   } else {
     // add
-    body.id = crypto.randomUUID();
-    items.unshift(body);
+    const newItem = {
+      ...body,
+      id: crypto.randomUUID(),
+    };
+    items.unshift(newItem);
     localStorage.setItem(collectionKey(collection), JSON.stringify(items));
     return ok(body);
   }

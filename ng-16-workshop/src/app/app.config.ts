@@ -6,6 +6,7 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { mockBackendInterceptor } from '@score/api';
 import { routes } from './app.routes';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,5 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([mockBackendInterceptor])),
     provideStoreDevtools(),
     provideStore(),
-  ],
+    provideEffects()
+],
 };
