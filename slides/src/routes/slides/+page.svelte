@@ -9,6 +9,7 @@
 	import { t } from '$lib/i18n';
 	import AppShell from '$lib/slides/app-shell/AppShell.svelte';
 	import Collections from '$lib/slides/collections/Collections.svelte';
+	import Feedback from '$lib/slides/feedback/Feedback.svelte';
 	import Intro from '$lib/slides/intro/Intro.svelte';
 	import Material from '$lib/slides/material/Material.svelte';
 	import Navigation from '$lib/slides/navigation/Navigation.svelte';
@@ -53,6 +54,7 @@
 		{#if $unitTest}
 			<UnitTest />
 		{/if}
+		<Feedback />
 	</div>
 </div>
 

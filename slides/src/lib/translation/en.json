@@ -5,7 +5,7 @@
 	"features": "Common 3rd party options",
 	"intro": {
 		"speaker": {
-			"host": "Im your host"
+			"host": "Im your trainer"
 		},
 		"overview": {
 			"title": "Overview",
@@ -22,10 +22,10 @@
 			"description": "Install the cli and create a new workspace"
 		},
 		"architecture": {
-			"layout": "Workspace Layout",
+			"layout": "Workspace layout",
 			"layout-description": "Explore the workspace",
 			"execute": "Execute projects",
-			"execute-description": "You can use the cli or predefined scripts from your package.json"
+			"execute-description": "Use the cli or predefined scripts from your package.json"
 		}
 	},
 	"shell": {
@@ -86,7 +86,7 @@
 	},
 	"nav": {
 		"title": "SPA Navigation",
-		"description": "Create link navigation and ouse angulars router api",
+		"description": "Create link navigation and use angulars router api",
 		"concepts": {
 			"title": "Required Concepts",
 			"description": "Use component events for inverse datra flow opposing to inputs and routing",
@@ -108,7 +108,7 @@
 			"description": "Use the cli to genrate the navigation and some components we use as endpoints of routes",
 			"html": {
 				"title": "Render buttons for each item",
-				"description": "Structural directive ngFor lets  us reuse markup for each element of the an collection. We can also use templateExpressions to raise the event directly from our markup"
+				"description": "Structural directive ngFor enables reusing markup for each element of a collection. Raise events directly with templateExpressions."
 			},
 			"ts": {
 				"title": "Input and Output",
@@ -127,10 +127,10 @@
 	},
 	"ui": {
 		"title": "Project type library",
-		"description": "Create a compopnent library domain independant reusable directives and helpers",
+		"description": "Create a compopnent library for domain independant reusable elements",
 		"concepts": {
 			"title": "Required Concepts",
-			"description": "We use the library project type, public apis and path alias to integrate",
+			"description": "Use the library project type, public apis and path alias to integrate",
 			"library": {
 				"title": "ng generate library",
 				"description": "The library schematic creates a library and updates the angular.json with respective build and test targets"
@@ -168,8 +168,8 @@
 					"description": "Use the routerLink directive to implicitly provide a href that works with angular router"
 				},
 				"ts": {
-					"title": "Router and activated route",
-					"description": "We can use ActivatedRoute to retrieve the current routing state and map items from there"
+					"title": "Router and ActivatedRoute",
+					"description": "Use ActivatedRoute to retrieve the current routing state and map items from there"
 				},
 				"css": {
 					"title": "Style binding",
@@ -184,16 +184,12 @@
 					"description": "Define a pipe to transform values in bindings"
 				},
 				"html": {
-					"title": "Render buttons for each item",
-					"description": "Structural directive ngFor lets  us reuse markup for each element of the an collection. We can also use templateExpressions to raise the event directly from our markup"
+					"title": "Render option for each item",
+					"description": "The pipe transforms to string."
 				},
 				"ts": {
-					"title": "Router and activated route",
-					"description": "We can use ActivatedRoute to retrieve the current routing state and map items from there"
-				},
-				"css": {
-					"title": "Style binding",
-					"description": "With css variables we can easily use data from js in our style calculation"
+					"title": "LocalStorage",
+					"description": "Store and retrieve strings per domain"
 				}
 			},
 			"card": {

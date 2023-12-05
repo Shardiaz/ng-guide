@@ -1,9 +1,520 @@
 {
-    "title": "Guide to angular",
-	"setup": "Getting started",
-	"speaker.host": "Ich bin euer Host",
-	"overview": {
-		"title": "Overview",
-		"description": "In this guide we will create a workspace with an ui library to explore the core concepts of Angular"
+	"title": "Guide to angular",
+	"loading": "...berite Folien vor...",
+	"start": "Präsentation starten",
+	"features": "3rd-Party Optionen",
+	"intro": {
+		"speaker": {
+			"host": "Ich bin euer Trainer"
+		},
+		"overview": {
+			"title": "Übersicht",
+			"description": "In diesem Guide erstellen wir einen workspace mit libraries und untesuchen die Kern-Konzepte von Angular"
+		}
+	},
+	"setup": {
+		"environment": {
+			"title": "Richte deinen Arbeitsplatz ein",
+			"description": "Wir benötigen Node.js als JavaScript Laufzeitumgebung und eine beliebige IDE"
+		},
+		"create": {
+			"title": "Gerüst mit angular cli",
+			"description": "Installiere die cli und lege einen workspace an"
+		},
+		"architecture": {
+			"layout": "Workspace Anordnung",
+			"layout-description": "Erkunde den workspace",
+			"execute": "Führe projects aus",
+			"execute-description": "Benutze die cli oder vorderfinierten scripte der package.json"
+		}
+	},
+	"shell": {
+		"task": {
+			"title": "AppShell componet",
+			"description": "Erzeuge eine componnet für das Grundgerüst der app Anordnung"
+		},
+		"generate": {
+			"title": "ng generate component",
+			"description": "Benutze die cli um das Gerüst einer einfachen standalone component mit template und style Dateien anzulegen",
+			"html": {
+				"title": "Semantisches Markup",
+				"description": "Versuche semantisches markup für a11y zu benutzen"
+			},
+			"ts": {
+				"title": "Component directive",
+				"description": "Neben der Konfiguration der component, erweitere sie mit inputs"
+			},
+			"css": {
+				"title": "Schreibe scoped styles",
+				"description": "Wir erstellen ein einfaches css layout mit der Hilfe von Pseudo-Klassen und Css-Variablen"
+			}
+		},
+		"use": {
+			"title": "Nutze die neue Shell",
+			"description": "Importiere components um sie im Template zu benutzen"
+		},
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Entdecke Template Syntax und eingebaute Directive zur Erzeugung dynamischen Markups",
+			"directives": {
+				"title": "Eingebaute Directive",
+				"types": "Directive Arten",
+				"details": "Details",
+				"components": {
+					"title": "Components",
+					"description": "Mit Template benutzt. Diese ist der am häuftigsten genutzte Directive-Typ."
+				},
+				"attribute": {
+					"title": "Attribute directive",
+					"description": "Ändert aussehen oder verhalten eines Elements, component, oder anderer directive."
+				},
+				"structural": {
+					"title": "Structural directive",
+					"description": "Ändert das DOM layout durch das Hinzufügen oder entfernen von Elementen.",
+					"ngif": "Diese directive umscließt ein Element, dass nur zum dom hinzugefügt wird wenn die Bedingung zutrifft",
+					"ngfor": "Diese directive umscließt ein Element als template und rendert es für jeden Eintrag in eienm itteratable",
+					"ngswitch": "Diese directive wechselt zwischen alternativen Ansichten basierend auf dem Abgleich eines Ausdrucks"
+				}
+			},
+			"template": {
+				"title": "Template Syntax",
+				"inerpolation": "String interpolation als kurz Schreibweise für one-way-Bindings",
+				"bindings": "Syncrhonisation von inputs oder outputs mit einem Ausdruck",
+				"inputs": "Definiere eingehenden Datenfluss mit inputs"
+			}
+		}
+	},
+	"nav": {
+		"title": "SPA Navigation",
+		"description": "Erzeuge link navigation und benutze angulars router api",
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Benutze Component events, für inversen Datenfluss im Vergleich zu inputs, und routing",
+			"events": {
+				"title": "Component Events",
+				"description": "Events für Datenfluss von component zu übergeordnetem Element",
+				"subscribe": "Abboniere mit einem Ausdruck im template"
+			},
+			"routes": {
+				"title": "Routing",
+				"description": "In SPA Applikationen benutzen wir Router-Frameworks um Seiteninhalte dynamisch zu ämndern. In angular benutzen wir dazu @angular/router.",
+				"config": "Konfiguriere Routen und Umleitungen",
+				"outlet": "Nutze die RouterOutlet-Component um platzhalter für das Platzieren von annavigierten Component zu definieren.",
+				"lazy": "Eine fortgeschrittene Methode ist das lazy loading von Routen die initial nicht benötigt werden, um das Seiten Laden zu beschleunigen."
+			}
+		},
+		"generate": {
+			"title": "Componnet und Endpunkte",
+			"description": "Benutze die cli um die navigation und ein paar Components als Endpunkte von Routen zu erzeugen.",
+			"html": {
+				"title": "Render buttons für jeden Eintrag",
+				"description": "Strukturelle directive ngFor erlaubt die wiederverwendung von markup pro Eintrag einer Sammlung. Löse events direkt mit templateExpressions aus."
+			},
+			"ts": {
+				"title": "Input und Output",
+				"description": "Erzeuge ein input um die Einträge anzugeben, die in der Navigation angezeigt werden, und ein event um über die Selektion eines Eintrags zu benachrichtigen."
+			},
+			"css": {
+				"title": "Flexbox",
+				"description": "Flexbox ist eine Implementierung die responsives Platzieren von Elementen ermöglicht."
+			}
+		},
+		"use": {
+			"title": "Erweitere die Shell",
+			"description": "Füge die Navigation i den Header ein.",
+			"routes": "Füge die routen zur Konfiguration hinzu."
+		}
+	},
+	"ui": {
+		"title": "Project Typ Library",
+		"description": "Erzeige eine Component Bibliothek für compopnent Domänen unabhänguge wiederverwendbare elemente",
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Benutze den library Projekttyp, öffentliche apis und path alias zur integration",
+			"library": {
+				"title": "ng generate library",
+				"description": "Das library schematic erzeugt eine Bibliothek und aktualisiert die angular.json mit respectiven build und test targets"
+			},
+			"alias": {
+				"title": "Veröffentliche einen benutzerdefinierten import Pfad",
+				"description": "Besonders beim arbieten mit mehreren Bibliotheken ist es üblich die imports in tsconfig zu scopen"
+			},
+			"projects": {
+				"title": "Arbeiten mit projects",
+				"description": "Die cli kann die implizite und explizite project Option beutzen Aufgaben für spezifische Projekte auszuführen anstelle der App."
+			},
+			"api": {
+				"title": "Library api",
+				"description": "Um auf den Code zuzugreifen exportiert die Bibliothek eine Einstiegsdatei. Standadrmäßig generiert die cli eine dedizierte Datei du alle Exports definierst die für Konsumenten der Bibliothek sichtbar sind."
+			},
+			"pipes": {
+				"title": "Pipes",
+				"description": "Pipes transformieren Werte in templates"
+			}
+		},
+		"generate": {
+			"title": "Erzeuge ui lib",
+			"description": "Generiere eine baubare Bibliothek",
+			"components": {
+				"title": "Füge components hinzu",
+				"description": "Generate components in der lib",
+				"api": "Schlussendlich veröffentliche components für Konsumenten der lib"
+			},
+			"nav-bar": {
+				"title": "Eruege eine Navigations-Leiste",
+				"description": "Eine generische breadcrumb component visualisiert den verschachtelten Navigationspfad.",
+				"html": {
+					"title": "Navigation Links",
+					"description": "Benutze die routerLink directive um implizit eine href anzugeben die mit angular router arbeitet."
+				},
+				"ts": {
+					"title": "Router und ActivatedRoute",
+					"description": "Benutze ActivatedRoute um den aktuellen Navigationszustand zu erhalten und leite Einträge davon ab."
+				},
+				"css": {
+					"title": "Style binding",
+					"description": "Mit Css-Variablen ermöglichen wir es einfach daten von js in style berechnungen zu verwenden."
+				}
+			},
+			"theme": {
+				"title": "Erzeuge eine Theme-Auswahl component",
+				"description": "Component die den wechsel von Themes ermöglicht",
+				"pipe": {
+					"title": "Benutzerdefinierte Pipe ",
+					"description": "Definiere eine Pipe um Werte in Bindings zu transformieren"
+				},
+				"html": {
+					"title": "Render option für jeden Eintrag",
+					"description": "Die Pipe transformiert zu string."
+				},
+				"ts": {
+					"title": "LocalStorage",
+					"description": "Speicher und lese strings pro domain"
+				}
+			},
+			"card": {
+				"title": "Erzeuge eine card component",
+				"description": "Gestalte die component um Platzhalter für Inhalte anzubieten",
+				"html": {
+					"title": "Platzhalter Inhalt",
+					"description": "Benutze die NgContent component um einen Platzhalter für content injection zu definieren."
+				},
+				"css": {
+					"title": "Css Variablen",
+					"description": "Mit css variablen erlauben wir glo  By using css vars we allow global color specs as well as local overrides"
+				}
+			}
+		},
+		"use": {
+			"title": "Use the lib's components",
+			"description": "Import components to use them in the template"
+		}
+	},
+	"theme": {
+		"title": "Css theming",
+		"description": "Create a theme for your application",
+		"concept": {
+			"title": "Notwendige Konzepte",
+			"description": "Witch css variables and scoped overrides enable customied theming"
+		},
+		"elements": "Styles for default elements",
+		"colors": "Create a color palette",
+		"font": "Setup fontfaces",
+		"compilation": "Compose the Theme",
+		"utils": "Util classes",
+		"import": "import theme and utils"
+	},
+	"collections": {
+		"title": "App feature",
+		"description": "Compose the app with self contained features",
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Use component events for inverse datra flow opposing to inputs and routing",
+			"routes": {
+				"title": "Export routes",
+				"description": "Export the features routes as entry point"
+			},
+			"http": {
+				"title": "HttpClient",
+				"description": "Http client wraps fetch in a typed observable resposne",
+				"interceptors": "HttpInterceptors will be called for every request initiated with an HttpClient"
+			},
+			"forms": {
+				"title": "Richer Forms",
+				"description": "Forms and ReactiveForms provide richer functionallity to handle complex forms",
+				"markup": "Create forms with forms directives",
+				"builder": "Create reactive forms With the frombuilder"
+			}
+		},
+		"generate": {
+			"title": "Create collections feature",
+			"description": "Library implementing the feature",
+			"service": {
+				"title": "Collections service",
+				"description": "Local service to help resolving route titles"
+			},
+			"routes": {
+				"title": "Export child routes",
+				"description": "Use a redirect to define the default route and the local service to resolve the route parameter"
+			},
+			"edit": {
+				"html": {
+					"title": "Reactive form",
+					"description": "Use reactive forms to design complex form data"
+				},
+				"ts": {
+					"title": "Formbuilder",
+					"description": "Use the router and formbuilder to create a formGroup based on the model"
+				}
+			},
+			"overview": {
+				"html": {
+					"title": "Async pipe",
+					"description": "With the async pipe we can itterate over an observable"
+				},
+				"ts": {
+					"title": "Observable",
+					"description": "Create an observable returning all collections"
+				},
+				"css": {
+					"title": "flex-wrap",
+					"description": "Layout the items with flex wrap for responsive placement"
+				}
+			},
+			"api": {
+				"title": "Create api lib",
+				"description": "Api lib providing models and services",
+				"models": {
+					"title": "Api contracts",
+					"description": "Define api models"
+				},
+				"services": {
+					"title": "Create services",
+					"base": "Utilize a base service with common REST implementation",
+					"collection": "Implement the collection service"
+				},
+				"mock": {
+					"title": "HttpMockInterceptor",
+					"description": "Interceptor to mock backend while developing"
+				},
+				"export": {
+					"title": "Public api",
+					"description": "Export models, services and interceptors"
+				}
+			}
+		},
+		"use": {
+			"title": "Add child routes",
+			"description": "Lazy load the feature route"
+		}
+	},
+	"ratings": {
+		"title": "Additional feature",
+		"description": "Feature exploring itemscontrols and complex routing with guards",
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Use custom directives and queries to enable typed templates in generic controls while protecting access with guards",
+			"guards": {
+				"title": "Route guards",
+				"description": "Route guards can be used to limit access as well as loading data",
+				"usage": "Guards will be used in route configuration"
+			},
+			"queries": {
+				"title": "View and Content queries",
+				"description": "With view and content queries we can access template and content children",
+				"options": "Adjust how and what references will be stored"
+			},
+			"directives": {
+				"title": "Custom directives",
+				"description": "Custom directives provide similar functionality to components but do not provide template or styling"
+			}
+		},
+		"generate": {
+			"title": "Create ratings feature",
+			"description": "Create a similar library to collections",
+			"service": {
+				"title": "Ratings service",
+				"description": "Local service providing trasnformations between form and model"
+			},
+			"routes": {
+				"title": "Nested child routes",
+				"description": "We nest routes to create the breadcrumb structure"
+			},
+			"browser": {
+				"title": "Itemscontrol",
+				"description": "Create an itemscontrol component",
+				"directive": {
+					"title": "Attribute directives",
+					"description": "Use ngTemplateContextGuard to create type support within the template"
+				},
+				"html": {
+					"title": "Template Outlet",
+					"description": "The template outlet directive allows assigning templates and their context to slots"
+				},
+				"ts": {
+					"title": "ContenChild",
+					"description": "Create an observable returning all collections"
+				},
+				"css": {
+					"title": "Layout items"
+				}
+			},
+			"dashboard": {
+				"html": {
+					"title": "Item Browser",
+					"description": "Define templates using the new ItemBowserComponet"
+				},
+				"ts": {
+					"title": "Compose observables",
+					"description": "Compose a list consisting of collections and respective ratings"
+				},
+				"css": {
+					"title": "Style the templates"
+				}
+			},
+			"edit": {
+				"html": {
+					"title": "Generic template",
+					"description": "Genericly create inputs for each formArray entry"
+				},
+				"ts": {
+					"title": "Form",
+					"description": "Create the form and collection mapping to the route"
+				},
+				"css": {
+					"title": "Layout items"
+				}
+			},
+			"ratings": {
+				"html": {
+					"title": "Async pipe",
+					"description": "With the async pipe we can itterate over an observable"
+				},
+				"ts": {
+					"title": "Observable",
+					"description": "Create an observable returning all collections"
+				},
+				"css": {
+					"title": "flex-wrap",
+					"description": "Layout the items with flex wrap for responsive placement"
+				}
+			}
+		},
+		"use": {
+			"title": "Add child routes",
+			"description": "Lazy load the feature route"
+		}
+	},
+	"material": {
+		"title": "Material Design",
+		"description": "Use angular material implementation",
+		"generate": {
+			"title": "Ng add",
+			"description": "Use ng add to setup your application",
+			"palette": {
+				"title": "Colors",
+				"description": "Define custom Material palettes"
+			},
+			"theme": {
+				"title": "Material Theme",
+				"description": "Setup the theme and conditions for custom color sets"
+			}
+		},
+		"use": {
+			"title": "Apply material",
+			"description": "Finally import the material theme"
+		}
+	},
+	"ngrx": {
+		"title": "NgRx",
+		"description": "StateManagement inspired by Redux",
+		"generate": {
+			"title": "Create collections feature store",
+			"description": "Feature store to handle all collections interactions and state",
+			"actions": {
+				"title": "Api interactions",
+				"description": "Define actions for all possible api interactions"
+			},
+			"effects": {
+				"title": "Effects",
+				"description": "Create effects to execute async api calls on action dispatch"
+			},
+			"feature": {
+				"title": "Feature",
+				"description": "Features wrap action, events and reducers for a subset of the store"
+			}
+		},
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Create store pattern with actions, effects and reducer",
+			"redux-link": "Should I use redux",
+			"actions": {
+				"title": "Actions",
+				"description": "Define typed actions that can be handled by the store"
+			},
+			"selectors": {
+				"title": "Selectors",
+				"description": "Define custom selectors to create reusable acess to subsets of the store or computed values"
+			},
+			"effects": {
+				"title": "Effects",
+				"description": "Define effects to take react on actions dispatched in the store"
+			},
+			"reducer": {
+				"title": "Reducer",
+				"description": "Single point of mutating the store state"
+			},
+			"feature": {
+				"title": "Features",
+				"description": "Use features to seperate subsets of the store with independant implementations"
+			},
+			"dev": {
+				"title": "Dev Tools",
+				"description": "Leverage the redux pattern with extended redux DevTools"
+			}
+		},
+		"use": {
+			"title": "Provide reducer and effects",
+			"description": "Provide features on route level and root state in app.config"
+		}
+	},
+	"unit-test": {
+		"title": "Unit Testing",
+		"description": "Write and execute unit tests",
+		"generate": {
+			"title": "Test ui and ratings",
+			"description": "Unittest theme-switch and ratings componets",
+			"theme-switch": {
+				"title": "Simple component test",
+				"description": "Spy to track and mock interactions"
+			},
+			"mock": {
+				"title": "Reusable mock implementations",
+				"description": "Reuse mock implementation for multiple tests"
+			},
+			"ratings": {
+				"title": "Complex Test",
+				"description": "Testing ratings with the help of spies and fixture"
+			}
+		},
+		"concepts": {
+			"title": "Notwendige Konzepte",
+			"description": "Karma the test runner and Jasmine as test framework",
+			"jasmine": {
+				"title": "Jasmine",
+				"description": "Use jasmine to describe unit test",
+				"spy": "Use spy to track calls or even mock returnValues",
+				"expect": "Use expects to evaluate tests"
+			},
+			"providers": {
+				"title": "Providers",
+				"description": "Provide dependencies that would otherwise be met by the application"
+			},
+			"fixture": {
+				"title": "Fixture",
+				"description": "Orchestrate the test enviroment with fixture",
+				"queries": "Use queries to access the dom"
+			}
+		}
 	}
 }
