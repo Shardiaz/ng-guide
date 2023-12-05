@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Theme } from './theme.model';
 import { ThemePipe } from './themes.pipe';
 
-const THEME_ATTRIBUTE = 'theme';
+export const THEME_ATTRIBUTE = 'theme';
 
 @Component({
   selector: 'ui-theme-switch',

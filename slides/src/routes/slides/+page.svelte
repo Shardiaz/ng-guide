@@ -17,7 +17,8 @@
 	import Environment from '$lib/slides/setup/Environment.svelte';
 	import Theme from '$lib/slides/theme/Theme.svelte';
 	import UiLibrary from '$lib/slides/ui/UiLibrary.svelte';
-	import { material, ngrx } from '$lib/stores/features.store';
+	import UnitTest from '$lib/slides/unit-test/UnitTest.svelte';
+	import { material, ngrx, unitTest } from '$lib/stores/features.store';
 	import { ProgressRadial } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 
@@ -48,6 +49,9 @@
 		<Ratings />
 		{#if $ngrx}
 			<NgRx />
+		{/if}
+		{#if $unitTest}
+			<UnitTest />
 		{/if}
 	</div>
 </div>

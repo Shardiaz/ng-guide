@@ -1,6 +1,6 @@
 <script>
 	import { t } from '$lib/i18n';
-	import { material, ngrx } from '$lib/stores/features.store';
+	import { material, ngrx, unitTest } from '$lib/stores/features.store';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
 </script>
 
@@ -15,6 +15,11 @@
 		</li>
 		<li class="p-2">
 			<SlideToggle name="ngrx" active="bg-primary-500" bind:checked={$ngrx}>NgRx</SlideToggle>
+		</li>
+		<li class="p-2">
+			<SlideToggle name="unit" active="bg-primary-500" bind:checked={$unitTest}
+				>Unit Testing</SlideToggle
+			>
 		</li>
 	</ul>
 </div>

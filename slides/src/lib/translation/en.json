@@ -481,5 +481,44 @@
 			"title": "Provide reducer and effects",
 			"description": "Provide features on route level and root state in app.config"
 		}
+	},
+	"unit-test": {
+		"title": "Unit Testing",
+		"description": "Write and execute unit tests",
+		"generate": {
+			"title": "Test ui and ratings",
+			"description": "Unittest theme-switch and ratings componets",
+			"theme-switch": {
+				"title": "Simple component test",
+				"description": "Spy to track and mock interactions"
+			},
+			"mock": {
+				"title": "Reusable mock implementations",
+				"description": "Reuse mock implementation for multiple tests"
+			},
+			"ratings": {
+				"title": "Complex Test",
+				"description": "Testing ratings with the help of spies and fixture"
+			}
+		},
+		"concepts": {
+			"title": "Required Concepts",
+			"description": "Karma the test runner and Jasmine as test framework",
+			"jasmine": {
+				"title": "Jasmine",
+				"description": "Use jasmine to describe unit test",
+				"spy": "Use spy to track calls or even mock returnValues",
+				"expect": "Use expects to evaluate tests"
+			},
+			"providers": {
+				"title": "Providers",
+				"description": "Provide dependencies that would otherwise be met by the application"
+			},
+			"fixture": {
+				"title": "Fixture",
+				"description": "Orchestrate the test enviroment with fixture",
+				"queries": "Use queries to access the dom"
+			}
+		}
 	}
 }

@@ -47,6 +47,7 @@
 	<Code external="code/ngrx-dev-tools.ts" />
 	<a
 		href="https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd"
+		target="_blank"
 	>
 		Redux DevTools
 	</a>
