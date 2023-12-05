@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   THEME_ATTRIBUTE,
   ThemeSwitchComponent,
@@ -16,7 +17,7 @@ describe('ThemeSwitchComponent', () => {
     storageGetItem = spyOn(localStorage, 'getItem').and.returnValue(savedTheme);
 
     TestBed.configureTestingModule({
-      imports: [ThemeSwitchComponent],
+      imports: [NoopAnimationsModule, ThemeSwitchComponent],
     });
     fixture = TestBed.createComponent(ThemeSwitchComponent);
     component = fixture.componentInstance;

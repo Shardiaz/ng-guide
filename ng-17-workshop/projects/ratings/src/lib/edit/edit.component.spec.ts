@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CollectionService, RatingService } from '@score/api';
 import { mockCollectionService } from '../test/collection.service.mock';
@@ -18,7 +19,7 @@ describe('EditComponent', () => {
     });
 
     await TestBed.configureTestingModule({
-      imports: [EditComponent, RouterTestingModule],
+      imports: [NoopAnimationsModule, EditComponent, RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EditComponent);
