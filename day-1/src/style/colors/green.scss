@@ -1,0 +1,129 @@
+:root[theme="green"] {
+  --bg-color: rgba(255, 255, 255, 1);
+  --text-color: rgba(37, 51, 47, 1);
+  --text-soft-color: rgba(67, 76, 73, 1);
+  --text-strong-color: rgba(74, 74, 74, 1);
+  --subtle-color: rgba(245, 251, 249, 1);
+  --border-color: rgba(211, 236, 228, 1);
+  --shadow-color: rgba(148, 202, 185, 1);
+  --input-color: rgba(255, 255, 255, 1);
+  --outline-color: rgba(100, 210, 181, 1);
+  --mark-color: rgba(64, 140, 120, 0.08);
+  --special-color: rgba(64, 140, 120, 1);
+  --special-bg-color: rgba(66, 145, 124, 1);
+  --special-text-color: rgba(255, 255, 255, 1);
+  --special-shadow-color: rgba(49, 98, 84, 1);
+  --special-mark-color: rgba(255, 255, 255, 0.08);
+  --light-color: rgba(212, 252, 239, 1);
+  --dark-color: rgba(37, 78, 67, 1);
+  --text-color-rgb: 37, 51, 47;
+  --bg-color-rgb: 255, 255, 255;
+  --subtle-color-rgb: 245, 251, 249;
+  --special-color-rgb: 64, 140, 120;
+  --special-text-color-rgb: 255, 255, 255;
+  --special-bg-color-rgb: 66, 145, 124;
+  --shadow-color-rgb: 148, 202, 185;
+  --special-shadow-color-rgb: 49, 98, 84;
+  --outline-color-rgb: 100, 210, 181;
+  --dark-color-rgb: 37, 78, 67;
+  --light-color-rgb: 212, 252, 239;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[theme="green"] {
+    --bg-color: rgba(32, 32, 32, 1);
+    --text-color: rgba(203, 229, 220, 1);
+    --text-soft-color: rgba(179, 190, 186, 1);
+    --text-strong-color: rgba(187, 187, 187, 1);
+    --subtle-color: rgba(28, 38, 35, 1);
+    --border-color: rgba(24, 54, 45, 1);
+    --shadow-color: rgba(0, 0, 0, 1);
+    --input-color: rgba(28, 28, 28, 1);
+    --outline-color: rgba(82, 174, 150, 1);
+    --mark-color: rgba(71, 153, 131, 0.08);
+    --special-color: rgba(71, 153, 131, 1);
+    --special-bg-color: rgba(48, 109, 93, 1);
+    --special-text-color: rgba(203, 229, 220, 1);
+    --special-shadow-color: rgba(13, 34, 28, 1);
+    --special-mark-color: rgba(203, 229, 220, 0.08);
+    --light-color: rgba(111, 233, 200, 1);
+    --dark-color: rgba(18, 59, 49, 1);
+    --text-color-rgb: 203, 229, 220;
+    --bg-color-rgb: 32, 32, 32;
+    --subtle-color-rgb: 28, 38, 35;
+    --special-color-rgb: 71, 153, 131;
+    --special-text-color-rgb: 203, 229, 220;
+    --special-bg-color-rgb: 48, 109, 93;
+    --shadow-color-rgb: 0, 0, 0;
+    --special-shadow-color-rgb: 13, 34, 28;
+    --outline-color-rgb: 82, 174, 150;
+    --dark-color-rgb: 18, 59, 49;
+    --light-color-rgb: 111, 233, 200;
+  }
+}
+
+@media (prefers-color-scheme: light) and (prefers-contrast: more) {
+  :root[theme="green"] {
+    --bg-color: rgba(255, 255, 255, 1);
+    --text-color: rgba(24, 34, 31, 1);
+    --text-soft-color: rgba(28, 33, 32, 1);
+    --text-strong-color: rgba(74, 74, 74, 1);
+    --subtle-color: rgba(245, 251, 249, 1);
+    --border-color: rgba(149, 190, 177, 1);
+    --shadow-color: rgba(117, 166, 151, 1);
+    --input-color: rgba(255, 255, 255, 1);
+    --outline-color: rgba(91, 192, 165, 1);
+    --mark-color: rgba(48, 107, 91, 0.16);
+    --special-color: rgba(48, 107, 91, 1);
+    --special-bg-color: rgba(50, 111, 95, 1);
+    --special-text-color: rgba(255, 255, 255, 1);
+    --special-shadow-color: rgba(15, 37, 31, 1);
+    --special-mark-color: rgba(255, 255, 255, 0.16);
+    --light-color: rgba(212, 252, 239, 1);
+    --dark-color: rgba(37, 78, 67, 1);
+    --text-color-rgb: 24, 34, 31;
+    --bg-color-rgb: 255, 255, 255;
+    --subtle-color-rgb: 245, 251, 249;
+    --special-color-rgb: 48, 107, 91;
+    --special-text-color-rgb: 255, 255, 255;
+    --special-bg-color-rgb: 50, 111, 95;
+    --shadow-color-rgb: 117, 166, 151;
+    --special-shadow-color-rgb: 15, 37, 31;
+    --outline-color-rgb: 91, 192, 165;
+    --dark-color-rgb: 37, 78, 67;
+    --light-color-rgb: 212, 252, 239;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+  :root[theme="green"] {
+    --bg-color: rgba(32, 32, 32, 1);
+    --text-color: rgba(229, 242, 238, 1);
+    --text-soft-color: rgba(234, 241, 238, 1);
+    --text-strong-color: rgba(187, 187, 187, 1);
+    --subtle-color: rgba(28, 38, 35, 1);
+    --border-color: rgba(65, 85, 78, 1);
+    --shadow-color: rgba(0, 0, 0, 1);
+    --input-color: rgba(28, 28, 28, 1);
+    --outline-color: rgba(80, 171, 147, 1);
+    --mark-color: rgba(91, 192, 165, 0.16);
+    --special-color: rgba(91, 192, 165, 1);
+    --special-bg-color: rgba(38, 88, 75, 1);
+    --special-text-color: rgba(229, 242, 238, 1);
+    --special-shadow-color: rgba(0, 0, 0, 1);
+    --special-mark-color: rgba(229, 242, 238, 0.16);
+    --light-color: rgba(131, 249, 216, 1);
+    --dark-color: rgba(18, 59, 49, 1);
+    --text-color-rgb: 229, 242, 238;
+    --bg-color-rgb: 32, 32, 32;
+    --subtle-color-rgb: 28, 38, 35;
+    --special-color-rgb: 91, 192, 165;
+    --special-text-color-rgb: 229, 242, 238;
+    --special-bg-color-rgb: 38, 88, 75;
+    --shadow-color-rgb: 0, 0, 0;
+    --special-shadow-color-rgb: 0, 0, 0;
+    --outline-color-rgb: 80, 171, 147;
+    --dark-color-rgb: 18, 59, 49;
+    --light-color-rgb: 131, 249, 216;
+  }
+}

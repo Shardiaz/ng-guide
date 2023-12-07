@@ -1,0 +1,33 @@
+@if (form$ | async; as form) {
+<form [formGroup]="form" (ngSubmit)="save(form)">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput id="name" formControlName="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <label for="description">Description</label>
+    <textarea
+      matInput
+      id="description"
+      formControlName="description"
+    ></textarea>
+  </mat-form-field>
+  <div class="form-group">
+    <label for="kpis">KPIs</label>
+    <col-edit-kpi formArrayName="kpis"></col-edit-kpi>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    primary
+    *ngIf="form.dirty"
+    [disabled]="!form.valid"
+    type="submit"
+  >
+    Save
+  </button>
+  <button mat-stroked-button type="button" routerLink="../overview">
+    Cancel
+  </button>
+</form>
+}@else { ...Loading collection }

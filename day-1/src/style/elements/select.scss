@@ -1,0 +1,19 @@
+select {
+  background-color: var(--input-color);
+  outline-color: var(--outline-color);
+  color: var(--text-color);
+  padding: var(--input-padding);
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+  border-width: var(--border-width);
+
+  &:focus,
+  &:focus-within {
+    outline-width: var(--outline-width);
+    outline-style: solid;
+  }
+
+  option:checked {
+    color: var(--special-color);
+  }
+}

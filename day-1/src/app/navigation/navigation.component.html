@@ -1,0 +1,5 @@
+@for (item of items; track item.key) {
+<button mat-button color="accent" (click)="itemSelected.emit(item)">
+  {{ item.text }}
+</button>
+}

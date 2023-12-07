@@ -1,0 +1,29 @@
+<button mat-raised-button color="accent" (click)="addItem()" type="button">
+  New KPI
+</button>
+<div class="kpis">
+  @for (formGroup of formArray.controls; track index; let index = $index) {
+  <mat-card [formGroup]="formGroup" color="accent">
+    <mat-card-content>
+      <mat-form-field>
+        <label for="name">Name</label>
+        <input matInput id="name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <label for="description">Description</label>
+        <input matInput id="description" formControlName="description" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="delteIndex(index)"
+      >
+        Delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+</div>
