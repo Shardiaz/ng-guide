@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-container {
+  padding: 1rem;
+  border: solid 1px var(--special-bg-color);
+}
+
+.item-details {
+  flex-grow: 1;
+  padding: 1rem;
+  border: solid 1px var(--special-bg-color);
+}

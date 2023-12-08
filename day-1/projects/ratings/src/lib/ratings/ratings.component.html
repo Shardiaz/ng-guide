@@ -1,0 +1,10 @@
+<button mat-raised-button color="primary" routerLink="-">Add</button>
+<mat-card *ngFor="let rating of ratings$ | async" routerLink="{{ rating.id }}">
+  <mat-card-header>{{ rating.name }} </mat-card-header>
+  <mat-card-content>{{ rating.description }} </mat-card-content>
+  <mat-card-footer>
+    <mat-chip *ngFor="let kpi of rating.values">
+      {{ kpi.name }}<strong>{{ kpi.value }}</strong>
+    </mat-chip>
+  </mat-card-footer>
+</mat-card>

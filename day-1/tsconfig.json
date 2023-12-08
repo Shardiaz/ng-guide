@@ -22,7 +22,8 @@
     "paths": {
       "@score/ui": ["./dist/ui"],
       "@score/api": ["./dist/api"],
-      "@score/collections": ["./dist/collections"]
+      "@score/collections": ["./dist/collections"],
+      "@score/ratings": ["./dist/ratings"]
     },
     "lib": ["ES2022", "dom"]
   },

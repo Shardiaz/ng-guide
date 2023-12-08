@@ -1,0 +1,43 @@
+@if (form$| async; as form) {
+<form [formGroup]="form" (ngSubmit)="save(form)">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Decription</mat-label>
+    <input formControlName="description" matInput required />
+  </mat-form-field>
+  <h3>KPIS</h3>
+  <div class="kpi-list">
+    @for (kpi of form.controls.values.controls; track $index) {
+    <div [formGroup]="kpi">
+      <h4>{{ kpi.value.name }}</h4>
+      <mat-form-field>
+        <mat-label>Value</mat-label>
+        <input matInput formControlName="value" />
+        <mat-error *ngIf="kpi.getError('onlyValues', 'value') as error">
+          Only Numbers {{ error.reason }}
+        </mat-error>
+        <mat-error *ngIf="kpi.getError('min', 'value') as error">
+          Min value is 1
+        </mat-error>
+        <mat-error *ngIf="kpi.getError('onlyValues', 'value') as error">
+          Only Numbers {{ error.reason }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    }
+  </div>
+  <button
+    *ngIf="form.dirty"
+    [disabled]="form.invalid"
+    mat-raised-button
+    color="primary"
+    type="submit"
+  >
+    Save
+  </button>
+  <button mat-button type="button" routerLink="..">Cancel</button>
+</form>
+}

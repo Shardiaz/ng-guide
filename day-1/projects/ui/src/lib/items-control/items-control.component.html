@@ -1,0 +1,22 @@
+@for (item of items; track $index) {
+<div class="item-container" (click)="selectItem(item)">
+  <ng-content
+    *ngTemplateOutlet="
+      itemTemplate?.template || null;
+      context: { $implicit: item }
+    "
+  >
+  </ng-content>
+</div>
+} @if (!!selectedItem) {
+<div class="item-details">
+  <ng-content
+    *ngTemplateOutlet="
+      detailTemplate?.template || null;
+      context: { $implicit: selectedItem }
+    "
+  >
+  </ng-content>
+</div>
+
+}

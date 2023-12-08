@@ -1,0 +1,15 @@
+<ui-items-control [items]="collectionRatings">
+  <ng-template [items]="collectionRatings" let-collection>
+    {{ collection.name }}
+    <button
+      mat-button
+      routerLink="../{{ collection.id }}"
+      (click)="$event.stopPropagation()"
+    >
+      View
+    </button>
+  </ng-template>
+  <ng-template [details]="collectionRatings" let-collection>
+    {{ collection | json }}
+  </ng-template>
+</ui-items-control>
